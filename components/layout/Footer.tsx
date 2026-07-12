@@ -19,18 +19,18 @@ export default function Footer() {
         </svg>
       </div>
 
-      <div className="max-w-350 mx-auto px-6 sm:px-8 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-8 relative z-10">
         
         {/* Column 1: Logo, Description & Socials */}
-        <div className="space-y-6 lg:pr-4">
+        <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-2 space-y-6 lg:pr-4">
           <Link href="/" className="flex flex-col items-start gap-2 group w-fit">
-            <div className=" shadow-sm transition-transform duration-300 group-hover:scale-105">
+            <div className="shadow-sm overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105">
               <Image 
-                src="/AlMuslims-footer-logo.jpeg" 
+                src="/Almuslims-footer-logo.jpeg" 
                 alt="AlMuslims Logo" 
-                width={100} 
-                height={100} 
-                className="h-40 w-auto object-contain"
+                width={80} 
+                height={80} 
+                className="h-20 w-auto object-contain rounded-md"
               />
             </div>
             <div className="flex flex-col mt-2">
@@ -49,7 +49,7 @@ export default function Footer() {
 
         {/* Column 2: Quick Links */}
         <div>
-          <span className="text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Quick Links</span>
+          <span className="block text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Quick Links</span>
           <ul className="space-y-5 text-[14px] text-white/80">
             <li><Link href="/" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary"/> Home</Link></li>
             <li><Link href="/about" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary"/> About Us</Link></li>
@@ -59,7 +59,7 @@ export default function Footer() {
 
         {/* Column 3: Categories */}
         <div>
-          <span className="text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Categories</span>
+          <span className="block text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Categories</span>
           <ul className="space-y-5 text-[14px] text-white/80">
             <li><Link href="/holy-quran" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary"/> Quran</Link></li>
             <li><Link href="/dua-collection" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary"/> Duas & Azkar</Link></li>
@@ -71,7 +71,7 @@ export default function Footer() {
 
         {/* Column 4: Resources */}
         <div>
-          <span className="text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Resources</span>
+          <span className="block text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Resources</span>
           <ul className="space-y-5 text-[14px] text-white/80">
            <li><Link href="/faq" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary"/> FAQ</Link></li>
             <li><Link href="/privacy" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary"/> Privacy Policy</Link></li>
@@ -81,7 +81,7 @@ export default function Footer() {
 
         {/* Column 5: Get In Touch */}
         <div>
-          <span className="text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Get In Touch</span>
+          <span className="block text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Get In Touch</span>
           <div className="space-y-5 text-[14px] text-white/80">
             <div className="flex items-start gap-4">
               <FaEnvelope className="text-secondary mt-1" size={14} />
@@ -102,7 +102,7 @@ export default function Footer() {
 
       {/* Copyright Bar */}
       <div className="w-full bg-[#04281E] py-5 border-t border-white/5 relative z-10">
-        <div className="max-w-350 mx-auto px-6 sm:px-8 lg:px-12 text-[13px] text-white/50 flex flex-col md:flex-row text-center justify-center items-center gap-4">
+        <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 text-[13px] text-white/50 flex flex-col md:flex-row text-center justify-center items-center gap-4">
           <p>© {new Date().getFullYear()} AlMuslims.com - All rights reserved.</p>
         </div>
       </div>
