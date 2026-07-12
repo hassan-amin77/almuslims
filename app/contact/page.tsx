@@ -176,12 +176,11 @@ export default function ContactUsPage() {
             {/* Phone */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Mobile Phone <span className="text-secondary">*</span>
+                Mobile Phone <span className="text-gray-400 text-xs font-normal">(Optional)</span>
               </label>
               <input
                 type="text"
                 name="phone"
-                required
                 value={form.phone}
                 onChange={handleChange}
                 placeholder="Enter your phone number (digits only)"
