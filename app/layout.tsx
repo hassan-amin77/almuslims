@@ -9,6 +9,9 @@ import GlobalSearch from "@/components/layout/GlobalSearch";
 export const metadata: Metadata = {
   title: "AlMuslims",
   description: "Your Professional Islamic Portal",
+  icons: {
+    icon: "/favicon.jpeg",
+  },
   robots: {
     index: false,
     follow: false,
