@@ -24,22 +24,16 @@ export default function Footer() {
         {/* Column 1: Logo, Description & Socials */}
         <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-2 space-y-6 lg:pr-4">
           <Link href="/" className="flex flex-col items-start gap-2 group w-fit">
-            <div className="shadow-sm overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105">
+            <div className="shadow-sm overflow-hidden rounded-lg ">
               <Image
-                src="/Almuslims-footer-logo.jpeg"
+                src="/Almuslims-footer-logo.png"
                 alt="AlMuslims Logo"
-                width={80}
+                width={160}
                 height={80}
-                className="h-20 w-auto object-contain rounded-md"
+                style={{ width: 'auto' }}
+                className="h-20 object-contain rounded-md"
+                unoptimized
               />
-            </div>
-            <div className="flex flex-col mt-2">
-              <span className="font-logo text-3xl font-bold leading-tight text-white tracking-wide">
-                AlMuslims
-              </span>
-              <span className="text-[9px] tracking-[0.25em] text-secondary uppercase mt-1 font-bold">
-                Authentic Islamic Knowledge
-              </span>
             </div>
           </Link>
           <p className="text-sm text-white/70 leading-relaxed font-light">
@@ -82,18 +76,12 @@ export default function Footer() {
         {/* Column 5: Get In Touch */}
         <div>
           <span className="block text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Get In Touch</span>
-          <div className="space-y-5 text-[14px] text-white/80">
-            <div className="flex items-start gap-4">
-              <FaEnvelope className="text-secondary mt-1" size={14} />
-              <p>officialalmuslims@gmail.com</p>
-            </div>
-            <div className="flex items-start gap-4">
-              <FaPhoneAlt className="text-secondary mt-1" size={14} />
-              <p>+92 300 1234567</p>
-            </div>
-            <div className="flex items-start gap-4">
-              <FaMapMarkerAlt className="text-secondary mt-1" size={14} />
-              <p>Lahore, Pakistan</p>
+          <div className="space-y-4 text-[14px] text-white/80">
+            <div className="flex items-center gap-3">
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-secondary/20 flex items-center justify-center">
+                <FaEnvelope className="text-secondary" size={12} />
+              </span>
+              <p className="break-all">officialalmuslims@gmail.com</p>
             </div>
           </div>
         </div>

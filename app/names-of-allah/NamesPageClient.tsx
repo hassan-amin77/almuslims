@@ -55,7 +55,7 @@ export default function NamesPageClient() {
           99 Names of Allah
         </h1>
         <p className="text-gray-500 max-w-xl mx-auto text-sm">
-          The Beautiful Names of Allah — sourced from AlAdhan API, based on authentic Islamic tradition.
+          The Beautiful Names of Allah based on authentic Islamic tradition.
         </p>
       </div>
 

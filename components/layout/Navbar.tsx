@@ -28,25 +28,27 @@ export default function Navbar() {
     <nav className="w-full bg-white shadow-sm border-b border-gray-100 min-h-[64px]">
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          
+
           <div className="shrink-0">
             <Link href="/" className="flex items-center gap-3 group transition-all">
-              <Image 
-                src="/logo.png" 
-                alt="AlMuslims Logo" 
-                width={100} 
-                height={100} 
-                className="h-[100px] w-[100px] sm:h-24 sm:w-24 object-contain transition-transform duration-300 group-hover:scale-105"
+              <Image
+                src="/logo.png"
+                alt="AlMuslims Logo"
+                width={240}
+                height={60}
+                style={{ width: 'auto' }}
+                className="h-11 sm:h-14 object-contain transition-transform duration-300 group-hover:scale-105"
                 priority
+                unoptimized
               />
-              <div className="flex flex-col justify-center">
+              {/* <div className="flex flex-col justify-center">
                 <span className="font-logo text-[26px] sm:text-3xl font-bold leading-none text-primary tracking-wider">
                   AlMuslims
                 </span>
                 <span className="text-[9px] sm:text-[10px] tracking-[0.2em] text-primary/60 uppercase mt-1.5 font-bold">
                   Authentic Islamic Knowledge
                 </span>
-              </div>
+              </div> */}
             </Link>
           </div>
 
@@ -58,11 +60,10 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors py-2 ${
-                    isActive 
-                      ? "text-primary font-bold border-b-2 border-secondary" 
-                      : "text-zinc-500 hover:text-primary"
-                  }`}
+                  className={`text-sm font-medium transition-colors py-2 ${isActive
+                    ? "text-primary font-bold border-b-2 border-secondary"
+                    : "text-zinc-500 hover:text-primary"
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -72,7 +73,7 @@ export default function Navbar() {
 
           {/* Right Side: Search + Actions (Desktop) */}
           <div className="hidden xl:flex items-center gap-4 text-zinc-600">
-            <button 
+            <button
               onClick={handleSearchClick}
               className="p-2 hover:text-primary transition-colors cursor-pointer"
               aria-label="Search site"
@@ -80,17 +81,17 @@ export default function Navbar() {
               <FaSearch className="text-sm" />
             </button>
           </div>
-          
+
           {/* Mobile Actions and Menu Button (Hamburger) */}
           <div className="xl:hidden flex items-center gap-2">
-            <button 
+            <button
               onClick={handleSearchClick}
               className="text-zinc-600 cursor-pointer"
               aria-label="Search site"
             >
               <FaSearch size={16} />
             </button>
-            <button 
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-zinc-600 p-2 focus:outline-none cursor-pointer"
               aria-label="Menu"
