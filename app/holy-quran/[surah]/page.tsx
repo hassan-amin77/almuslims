@@ -24,6 +24,8 @@ interface SurahMeta {
   englishName: string;
 }
 
+const BISMILLAH_REGEX = /^ب[\u064B-\u065F\u0670]*س[\u064B-\u065F\u0670]*م[\u064B-\u065F\u0670]*\s+ٱ[\u064B-\u065F\u0670]*ل[\u064B-\u065F\u0670]*ل[\u064B-\u065F\u0670]*ه[\u064B-\u065F\u0670]*\s+ٱ[\u064B-\u065F\u0670]*ل[\u064B-\u065F\u0670]*ر[\u064B-\u065F\u0670]*ح[\u064B-\u065F\u0670]*م[\u064B-\u065F\u0670]*ن[\u064B-\u065F\u0670]*\s+ٱ[\u064B-\u065F\u0670]*ل[\u064B-\u065F\u0670]*ر[\u064B-\u065F\u0670]*ح[\u064B-\u065F\u0670]*ي[\u064B-\u065F\u0670]*م[\u064B-\u065F\u0670]*\s?/;
+
 export default function SurahDetail({ params }: { params: Promise<{ surah: string }> }) {
   const { surah: surahSlug } = use(params);
   const [data, setData] = useState<Edition[] | null>(null);
@@ -159,20 +161,22 @@ export default function SurahDetail({ params }: { params: Promise<{ surah: strin
             
             <div className="relative">
               <p className="font-arabic text-4xl sm:text-5xl lg:text-6xl text-right leading-[2.5] lg:leading-[3] text-gray-900 break-words" dir="rtl">
-                {arabic.ayahs.map((ayah) => {
-                  let text = ayah.text;
-                  if (currentNum !== 1 && currentNum !== 9 && ayah.numberInSurah === 1) {
-                    text = text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "");
-                  }
-                  return (
-                    <span key={ayah.number} className="inline group cursor-pointer hover:bg-primary/5 rounded-lg transition-colors p-1">
-                      {text}
-                      <span className="inline-flex items-center justify-center w-10 h-10 mx-3 rounded-full border-2 border-primary/20 text-primary text-xl font-bold translate-y-1">
-                        {ayah.numberInSurah}
+                {arabic.ayahs
+                  .filter((ayah) => !(currentNum === 1 && ayah.numberInSurah === 1))
+                  .map((ayah) => {
+                    let text = ayah.text;
+                    if (currentNum !== 1 && currentNum !== 9 && ayah.numberInSurah === 1) {
+                      text = text.replace(BISMILLAH_REGEX, "");
+                    }
+                    return (
+                      <span key={ayah.number} className="inline group cursor-pointer hover:bg-primary/5 rounded-lg transition-colors p-1">
+                        {text}
+                        <span className="inline-flex items-center justify-center w-10 h-10 mx-3 rounded-full border-2 border-primary/20 text-primary text-xl font-bold translate-y-1">
+                          {ayah.numberInSurah}
+                        </span>
                       </span>
-                    </span>
-                  );
-                })}
+                    );
+                  })}
               </p>
             </div>
           </div>
@@ -188,28 +192,32 @@ export default function SurahDetail({ params }: { params: Promise<{ surah: strin
               </div>
             )}
 
-            {arabic.ayahs.map((ayah, index) => {
-              let ayahText = ayah.text;
-              if (currentNum !== 1 && currentNum !== 9 && ayah.numberInSurah === 1) {
-                ayahText = ayahText.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "");
-              }
+            {arabic.ayahs
+              .filter((ayah) => !(currentNum === 1 && ayah.numberInSurah === 1))
+              .map((ayah) => {
+                let ayahText = ayah.text;
+                if (currentNum !== 1 && currentNum !== 9 && ayah.numberInSurah === 1) {
+                  ayahText = ayahText.replace(BISMILLAH_REGEX, "");
+                }
 
-              return (
-                <div key={ayah.number} className="bg-white rounded-3xl border border-gray-100 p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex justify-between items-center mb-6">
-                    <div className="w-8 h-8 rounded-lg bg-primary/5 flex items-center justify-center text-xs font-bold text-primary">
-                      {ayah.numberInSurah}
+                const englishAyahText = english?.ayahs.find((e) => e.numberInSurah === ayah.numberInSurah)?.text;
+
+                return (
+                  <div key={ayah.number} className="bg-white rounded-3xl border border-gray-100 p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex justify-between items-center mb-6">
+                      <div className="w-8 h-8 rounded-lg bg-primary/5 flex items-center justify-center text-xs font-bold text-primary">
+                        {ayah.numberInSurah}
+                      </div>
+                    </div>
+                    <p className="font-arabic text-3xl sm:text-4xl text-right leading-[2.2] text-gray-900 mb-8" dir="rtl">{ayahText}</p>
+                    <div className="pt-6 border-t border-gray-50">
+                      <div className="border-l-2 border-primary/20 pl-6">
+                        <p className="text-gray-700 text-sm sm:text-base leading-relaxed">{englishAyahText}</p>
+                      </div>
                     </div>
                   </div>
-                  <p className="font-arabic text-3xl sm:text-4xl text-right leading-[2.2] text-gray-900 mb-8" dir="rtl">{ayahText}</p>
-                  <div className="pt-6 border-t border-gray-50">
-                    <div className="border-l-2 border-primary/20 pl-6">
-                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed">{english?.ayahs[index]?.text}</p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         )}
 
