@@ -1,7 +1,19 @@
+export interface FAQItem {
+  q: string;
+  a: string;
+}
+
+export interface TOCItem {
+  title: string;
+  id: string;
+}
+
 export interface Article {
   id: string;
   slug: string;
   title: string;
+  metaTitle?: string;
+  metaDescription?: string;
   category: string;
   categoryId: string;
   excerpt: string;
@@ -14,9 +26,700 @@ export interface Article {
   image: string;
   color?: string;
   level: "Beginner" | "Intermediate" | "Advanced";
+  tableOfContents?: TOCItem[];
+  faqs?: FAQItem[];
+}
+
+export function getArticleCategoryPath(categoryOrId: string): string {
+  const cat = (categoryOrId || '').toLowerCase().trim();
+  if (cat === "quran" || cat === "holy-quran") return "quran";
+  return cat;
+}
+
+export function getArticleUrl(article: Article): string {
+  const categoryPath = getArticleCategoryPath(article.categoryId || article.category);
+  return `/${categoryPath}/${article.slug}`;
 }
 
 export const articles: Article[] = [
+  {
+    id: "9",
+    slug: "what-is-the-quran",
+    title: "What Is the Quran? A Complete Guide to Islam's Holy Book",
+    metaTitle: "What Is the Quran? Meaning, History & Importance",
+    metaDescription: "Learn what the Quran is, how it was revealed, preserved, structured, and used in Muslim life. Explore its history, teachings, translations, and significance in one comprehensive guide.",
+    category: "Quran",
+    categoryId: "quran",
+    excerpt: "",
+    content: `
+  <div class="space-y-10">
+
+    <!-- Quick Answer -->
+    <section id="quick-answer" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">Quick Answer</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        The Quran is the central religious text of Islam. Muslims hold it to be the literal, unaltered word of God (Allah), revealed in Arabic to the Prophet Muhammad (PBUH) between 610 and 632 CE through the angel Gabriel (Jibril). It consists of 114 chapters (surahs) and approximately 6,236 verses (ayat), totaling roughly 77,000–78,000 words in the original Arabic.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        The Quran functions as the primary source of Islamic theology, law, and daily practice. It is recited as an act of worship, not simply read as reference material.
+      </p>
+    </section>
+
+    <!-- Quick Facts -->
+    <section id="quick-facts" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-6">Quick Facts</h2>
+      <div class="overflow-x-auto my-6 rounded-2xl border border-gray-200 shadow-sm bg-white">
+        <table class="w-full text-left text-sm text-gray-700 border-collapse">
+          <thead>
+            <tr class="bg-[#0A3A2F]/5 border-b border-gray-200 text-xs font-bold text-primary uppercase tracking-wider">
+              <th class="p-4 border-r border-gray-200">Fact</th>
+              <th class="p-4">Detail</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Chapters (surahs)</td><td class="p-4">114</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Verses (ayat)</td><td class="p-4">~6,236</td></tr>
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Words (Arabic)</td><td class="p-4">~77,000–78,000</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Revelation period</td><td class="p-4">610–632 CE (23 years)</td></tr>
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Original language</td><td class="p-4">Classical Arabic</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">First verses revealed</td><td class="p-4">Surah Al-Alaq, verses 1–5 (Quran 96:1–5)</td></tr>
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Site of first revelation</td><td class="p-4">Cave of Hira, near Mecca</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">First full compilation</td><td class="p-4">Under Caliph Abu Bakr</td></tr>
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Standardized text</td><td class="p-4">Under Caliph Uthman</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Reading divisions</td><td class="p-4">30 juz, 60 hizb, 7 manzil</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-[#FFFCF6] border-l-4 border-secondary p-6 rounded-2xl my-6">
+        <p class="text-sm font-bold text-amber-900 uppercase tracking-wider mb-2">💡 Did You Know?</p>
+        <p class="text-gray-700 italic">
+          The Quran was not compiled into a single bound book during Muhammad's (PBUH) lifetime. It existed as a combination of memorized recitation and scattered written fragments until after his death in 632 CE.
+        </p>
+      </div>
+    </section>
+
+    <!-- Revelation Timeline (610–632 CE) -->
+    <section id="revelation-timeline" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-6">Revelation Timeline (610–632 CE)</h2>
+      <div class="space-y-6 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-primary/20 pl-8">
+        <div class="relative">
+          <div class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-primary ring-4 ring-white"></div>
+          <h4 class="font-bold text-gray-900 text-lg">610 CE</h4>
+          <p class="text-gray-700 mt-1">Muhammad (Sallallahu alaihi wasallam) receives the first revelation in the Cave of Hira, traditionally identified as the opening verses of Surah Al-Alaq (Quran 96:1–5).</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-primary ring-4 ring-white"></div>
+          <h4 class="font-bold text-gray-900 text-lg">610–622 CE</h4>
+          <p class="text-gray-700 mt-1">The Meccan period. Revelations during this phase center on monotheism and the afterlife, forming what scholars classify as the Makki surahs.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-primary ring-4 ring-white"></div>
+          <h4 class="font-bold text-gray-900 text-lg">622 CE</h4>
+          <p class="text-gray-700 mt-1">The Hijrah: Muhammad (PBUH) and his followers migrate to Medina.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-primary ring-4 ring-white"></div>
+          <h4 class="font-bold text-gray-900 text-lg">622–632 CE</h4>
+          <p class="text-gray-700 mt-1">The Medinan period. Revelation shifts toward law and community governance, forming the Madani surahs.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-primary ring-4 ring-white"></div>
+          <h4 class="font-bold text-gray-900 text-lg">632 CE</h4>
+          <p class="text-gray-700 mt-1">Muhammad (Sallallahu alaihi wasallam) dies. The Quran exists only in memorized form and scattered written fragments.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-primary ring-4 ring-white"></div>
+          <h4 class="font-bold text-gray-900 text-lg">632–634 CE</h4>
+          <p class="text-gray-700 mt-1">Under Caliph Abu Bakr, the text is compiled into a single manuscript (mushaf) by the scribe Zaid ibn Thabit, at the urging of the companion Umar ibn al-Khattab. The master copy is entrusted to Hafsah, one of Muhammad's (PBUH) wives.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-primary ring-4 ring-white"></div>
+          <h4 class="font-bold text-gray-900 text-lg">650 CE</h4>
+          <p class="text-gray-700 mt-1">Caliph Uthman ibn Affan commissions a standardized version to resolve regional recitation differences and distributes copies to major cities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Does the Word "Quran" Mean? -->
+    <section id="what-does-the-word-quran-mean" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">What Does the Word "Quran" Mean?</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        The word derives from the Arabic root <em>qara'a</em>, meaning "to read" or "to recite." Its most accurate translation is "the recitation," reflecting how the text was transmitted orally for years before existing as a complete written book.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Several related terms recur throughout Islamic scholarship:
+      </p>
+      <div class="overflow-x-auto my-6 rounded-2xl border border-gray-200 shadow-sm bg-white">
+        <table class="w-full text-left text-sm text-gray-700 border-collapse">
+          <thead>
+            <tr class="bg-[#0A3A2F]/5 border-b border-gray-200 text-xs font-bold text-primary uppercase tracking-wider">
+              <th class="p-4 border-r border-gray-200">Term</th>
+              <th class="p-4">Meaning</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Mushaf</td><td class="p-4">The physical written copy of the Quran</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Tanzil</td><td class="p-4">"The sending down", the act of revelation</td></tr>
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Wahy</td><td class="p-4">Divine revelation as a concept</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Al-Kitab</td><td class="p-4">"The Book", a Quranic self-reference</td></tr>
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Furqan</td><td class="p-4">"The criterion" that which distinguishes right from wrong</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Who Revealed the Quran — and Who Wrote It? -->
+    <section id="who-revealed-the-quran-and-who-wrote-it" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">Who Revealed the Quran — and Who Wrote It?</h2>
+      <p class="text-gray-700 leading-relaxed mb-6">These are frequently conflated, though they refer to distinct roles.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-primary text-base mb-2">Revealer:</h4>
+          <p class="text-gray-700 text-sm">In Islamic belief, God is the source of the Quran's content and exact wording.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-primary text-base mb-2">Transmitter:</h4>
+          <p class="text-gray-700 text-sm">The angel Gabriel (Jibril) delivered the revelation to Muhammad (Sallallahu alaihi wasallam).</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-primary text-base mb-2">Recipient:</h4>
+          <p class="text-gray-700 text-sm">Muhammad (Sallallahu alaihi wasallam) received the revelations but is not considered their author. Islamic theology explicitly rejects the idea that he composed the text, a position reinforced by his traditional description as <em>ummi</em> (unlettered), unable to read or write (Quran 29:48).</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-primary text-base mb-2">Scribes:</h4>
+          <p class="text-gray-700 text-sm">Companions recorded verses as they were revealed, using palm-leaf stalks, flat stones, and parchment. The ordered, bound compilation came only after Muhammad's (Sallallahu alaihi wasallam) death.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Was the Quran Revealed? -->
+    <section id="why-was-the-quran-revealed" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">Why Was the Quran Revealed?</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">Islamic teaching identifies several core purposes behind the revelation:</p>
+      <ul class="list-disc pl-6 space-y-3 text-gray-700">
+        <li>To reaffirm the oneness of God after what Islamic tradition regards as centuries of theological drift in earlier communities</li>
+        <li>To provide moral and legal guidance for individual and communal life</li>
+        <li>To warn of accountability in the afterlife and outline a path toward salvation</li>
+        <li>To serve as a final revelation, confirming and correcting earlier scriptures given to Moses and Jesus</li>
+      </ul>
+    </section>
+
+    <!-- How Was the Quran Preserved? -->
+    <section id="how-was-the-quran-preserved" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">How Was the Quran Preserved?</h2>
+      <p class="text-gray-700 leading-relaxed mb-6">Islamic scholarship identifies two parallel preservation methods.</p>
+      
+      <div class="space-y-6">
+        <div class="border-l-4 border-primary pl-6">
+          <h4 class="font-bold text-gray-900 text-lg mb-2">Oral transmission:</h4>
+          <p class="text-gray-700">Large numbers of Muhammad's (Sallallahu alaihi wasallam) companions memorized portions some the entire text during his lifetime. This practice of memorization (hifz) has continued unbroken; millions of hafiz worldwide today serve as a continuing verification against textual alteration.</p>
+        </div>
+        <div class="border-l-4 border-primary pl-6">
+          <h4 class="font-bold text-gray-900 text-lg mb-2">Written transmission:</h4>
+          <p class="text-gray-700">The Abu Bakr compilation, followed by the Uthmanic standardization, established a single fixed reference. Early manuscript evidence supports early textual stability: the Birmingham manuscript, for example, has been radiocarbon-dated to within decades of Muhammad's (Sallallahu alaihi wasallam) life, though academic discussion continues regarding dating methodology and minor regional recitation variants (qira'at).</p>
+        </div>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed mt-6">
+        Muslims also cite a theological guarantee of preservation. Quran 15:9 states that God Himself preserves the text, a concept often referenced through the term <em>Lawh al-Mahfuz</em>, "the Preserved Tablet."
+      </p>
+    </section>
+
+    <!-- How Is the Quran Structured? -->
+    <section id="how-is-the-quran-structured" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-6">How Is the Quran Structured?</h2>
+      
+      <h3 class="text-xl font-bold text-gray-800 mb-3">Surahs (Chapters)</h3>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The Quran contains 114 surahs, arranged primarily by length rather than by the order of revelation. Every surah except one (At-Tawbah) opens with the phrase "In the name of God, the Most Gracious, the Most Merciful."
+      </p>
+
+      <div class="overflow-x-auto my-6 rounded-2xl border border-gray-200 shadow-sm bg-white">
+        <table class="w-full text-left text-sm text-gray-700 border-collapse">
+          <thead>
+            <tr class="bg-[#0A3A2F]/5 border-b border-gray-200 text-xs font-bold text-primary uppercase tracking-wider">
+              <th class="p-4 border-r border-gray-200">Fact</th>
+              <th class="p-4">Surah</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Longest</td><td class="p-4">Al-Baqarah ("The Cow") — 286 verses</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Shortest</td><td class="p-4">Al-Kawthar — 3 verses</td></tr>
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">First by placement</td><td class="p-4">Al-Fatiha ("The Opening")</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">First revealed</td><td class="p-4">Al-Alaq</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-xl font-bold text-gray-800 mt-8 mb-3">Makki vs. Madani Surahs</h3>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Surahs are also classified by the period in which they were revealed. This classification directly affects interpretation.
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700 mb-6">
+        <li><strong>Makki surahs (Mecca, pre-622 CE):</strong> shorter verses; emphasis on monotheism and the afterlife</li>
+        <li><strong>Madani surahs (Medina, 622–632 CE):</strong> longer verses; emphasis on law and community structure</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-gray-800 mt-8 mb-3">Ayat, Juz, Hizb, and Manzil</h3>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li><strong>Ayat:</strong> individual verses, approximately 6,236 in total; the term literally means "sign"</li>
+        <li><strong>Juz:</strong> 30 equal divisions, enabling a complete reading across 30 days (commonly used during Ramadan)</li>
+        <li><strong>Hizb:</strong> 60 sections, two per juz</li>
+        <li><strong>Manzil:</strong> 7 divisions, used in some traditions for weekly completion</li>
+        <li><strong>Sajdah verses:</strong> 14–15 specific verses requiring physical prostration when recited or heard</li>
+      </ul>
+    </section>
+
+    <!-- What Language Is It In? -->
+    <section id="what-language-is-it-in" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">What Language Is It In?</h2>
+      <p class="text-gray-700 leading-relaxed mb-6">
+        The Quran was revealed in Classical Arabic, specifically the dialect of the Quraysh tribe. Islamic theology holds that the precise Arabic wording is itself part of the revelation, not merely a vehicle for meaning. For this reason, formal prayer recitation is conducted in Arabic regardless of the worshiper's native language.
+      </p>
+
+      <h3 class="text-xl font-bold text-gray-800 mb-3">Is a Translation Still "the Quran"?</h3>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        In strict Islamic terms, no. Translations are classified as interpretations of meaning (<em>tafsir al-ma'ani</em>), not the Quran itself. They remain essential for study and understanding.
+      </p>
+
+      <div class="overflow-x-auto my-6 rounded-2xl border border-gray-200 shadow-sm bg-white">
+        <table class="w-full text-left text-sm text-gray-700 border-collapse">
+          <thead>
+            <tr class="bg-[#0A3A2F]/5 border-b border-gray-200 text-xs font-bold text-primary uppercase tracking-wider">
+              <th class="p-4 border-r border-gray-200">Translation</th>
+              <th class="p-4 border-r border-gray-200">Translator/Editor</th>
+              <th class="p-4">Notable for</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">The Clear Quran</td><td class="p-4 border-r border-gray-100">Dr. Mustafa Khattab</td><td class="p-4">Modern, accessible English</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">The Study Quran</td><td class="p-4 border-r border-gray-100">Seyyed Hossein Nasr (ed.)</td><td class="p-4">Extensive scholarly commentary</td></tr>
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Sahih International</td><td class="p-4 border-r border-gray-100">Committee</td><td class="p-4">Literal rendering, widely cited</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Oxford World's Classics</td><td class="p-4 border-r border-gray-100">M.A.S. Abdel Haleem</td><td class="p-4">Academic, readable prose</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- What Does the Quran Teach? -->
+    <section id="what-does-the-quran-teach" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">What Does the Quran Teach?</h2>
+      <p class="text-gray-700 leading-relaxed mb-6">The Quran's teachings span several distinct thematic categories. Each is treated separately below for clarity.</p>
+
+      <div class="space-y-6">
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-lg mb-2">Monotheism (Tawhid)</h4>
+          <p class="text-gray-700">The Quran's most consistently repeated theme is <em>tawhid</em>, the absolute oneness of God. Surah Al-Ikhlas (Quran 112:1–4) is frequently cited as the clearest concise statement of this doctrine.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-lg mb-2">Prophets and Shared Figures</h4>
+          <p class="text-gray-700">The Quran discusses many figures found in Jewish and Christian scripture, including Adam, Noah, Abraham, and Moses, generally reframed within an Islamic theological structure. Jesus (Isa) appears by name in more than 20 verses, including a detailed account of his birth to the Virgin Mary (Quran 19:16–34). He is honored as a prophet and the Messiah, but the Quran explicitly rejects his divinity and the doctrine of the Trinity (Quran 5:116).</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-lg mb-2">The Unseen World</h4>
+          <p class="text-gray-700">The Quran describes jinn beings created from "smokeless fire" (Quran 15:27), distinct from both angels and humans, and possessing free will. Surah Al-Jinn (Quran 72) is devoted entirely to this subject.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-lg mb-2">The Afterlife</h4>
+          <p class="text-gray-700">Paradise (Jannah) and hell (Jahannam) are described in extensive, sensory detail throughout the text, tied consistently to themes of moral accountability and final judgment.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-lg mb-2">Law and Ethics</h4>
+          <p class="text-gray-700">Verses addressing marriage, inheritance, commerce, and criminal justice form a foundational though not sole source of Islamic jurisprudence (sharia), alongside the Sunnah.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quran vs. Bible -->
+    <section id="quran-vs-bible" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-6">Quran vs. Bible</h2>
+      
+      <div class="overflow-x-auto my-6 rounded-2xl border border-gray-200 shadow-sm bg-white">
+        <table class="w-full text-left text-sm text-gray-700 border-collapse">
+          <thead>
+            <tr class="bg-[#0A3A2F]/5 border-b border-gray-200 text-xs font-bold text-primary uppercase tracking-wider">
+              <th class="p-4 border-r border-gray-200">Topic</th>
+              <th class="p-4 border-r border-gray-200">Quran</th>
+              <th class="p-4">Bible</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Religion</td><td class="p-4 border-r border-gray-100">Islam</td><td class="p-4">Judaism (Old Testament) / Christianity (Old + New Testament)</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Believed origin</td><td class="p-4 border-r border-gray-100">Single revelation, one prophet, 23 years</td><td class="p-4">Multiple human authors across centuries</td></tr>
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Original language</td><td class="p-4 border-r border-gray-100">Classical Arabic</td><td class="p-4">Hebrew, Aramaic, Greek</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Structure</td><td class="p-4 border-r border-gray-100">114 surahs</td><td class="p-4">66–73 books (tradition-dependent)</td></tr>
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">View of Jesus</td><td class="p-4 border-r border-gray-100">Prophet and Messiah; not divine</td><td class="p-4">Son of God; central to salvation</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Compiled</td><td class="p-4 border-r border-gray-100">~7th century CE</td><td class="p-4">Old Testament composed over ~1,000 years earlier; New Testament ~1st century CE</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed italic mt-4">
+        The Quran is not older than the Bible. Both the Hebrew Bible and the New Testament predate it, the Hebrew Bible by close to a millennium in parts.
+      </p>
+    </section>
+
+    <!-- Quran, Hadith, and Sunnah -->
+    <section id="quran-hadith-and-sunnah" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">Quran, Hadith, and Sunnah</h2>
+      <p class="text-gray-700 leading-relaxed mb-6">These three terms are related but distinct, and confusing them is common.</p>
+
+      <ul class="list-disc pl-6 space-y-3 text-gray-700 mb-6">
+        <li><strong>Quran:</strong> Believed to be God's direct, verbatim speech</li>
+        <li><strong>Hadith:</strong> Individually recorded reports of Muhammad's (Sallallahu alaihi wasallam) sayings and actions, compiled later and graded by authenticity (sahih, hasan, da'if)</li>
+        <li><strong>Sunnah:</strong> The broader example and practice of Muhammad (Sallallahu alaihi wasallam), evidenced through hadith</li>
+      </ul>
+
+      <p class="text-gray-700 leading-relaxed">
+        Muslims treat the Quran as the primary source of guidance and the Sunnah as the essential framework for interpreting and applying it.
+      </p>
+    </section>
+
+    <!-- How Muslims Use the Quran Today -->
+    <section id="how-muslims-use-the-quran-today" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">How Muslims Use the Quran Today</h2>
+      <p class="text-gray-700 leading-relaxed mb-6">The Quran is embedded in daily and seasonal religious practice through specific, structured routines:</p>
+
+      <div class="space-y-4 text-gray-700">
+        <div><strong>Daily prayer (salah):</strong> Surah Al-Fatiha is recited in every unit (rakah) of each of the five daily prayers, making it one of the most frequently recited passages in the world.</div>
+        <div><strong>Ramadan:</strong> Many mosques conduct nightly taraweeh prayers during Ramadan, reciting one juz per night so the congregation completes the full Quran (khatm) by the month's end.</div>
+        <div><strong>Memorization programs (hifz):</strong> Formal Quran memorization schools (often called madrasas or hifz academies) enroll students — commonly starting between ages 5 and 10 — in multi-year structured memorization programs, with regular testing by qualified instructors.</div>
+        <div><strong>Recitation competitions:</strong> International Quran recitation competitions are held annually in numerous Muslim-majority countries, judged on both memorization accuracy and tajwid application.</div>
+        <div><strong>Life events:</strong> Verses are commonly recited at weddings, naming ceremonies, and funerals, and portions are referenced in religious rulings on marriage and inheritance.</div>
+        <div><strong>Digital tools:</strong> Quran mobile applications now offer audio recitation, verse-by-verse translation, tajwid color-coding, and memorization tracking reflecting continued adaptation of traditional practice to modern formats.</div>
+      </div>
+
+      <div class="bg-[#FFFCF6] border-l-4 border-secondary p-6 rounded-2xl my-6">
+        <p class="text-sm font-bold text-amber-900 uppercase tracking-wider mb-2">💡 Did You Know?</p>
+        <p class="text-gray-700 italic">
+          Surah Al-Fatiha is recited a minimum of 17 times daily by observant Muslims performing the five daily prayers, making it likely the most repeated text in religious practice worldwide.
+        </p>
+      </div>
+    </section>
+
+    <!-- Recitation and Study -->
+    <section id="recitation-and-study" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">Recitation and Study</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">Several disciplines govern how the Holy Quran is read and interpreted:</p>
+      
+      <ul class="list-disc pl-6 space-y-3 text-gray-700">
+        <li><strong>Tajwid:</strong> The rules of correct pronunciation and articulation during recitation</li>
+        <li><strong>Tarteel:</strong> Slow, deliberate recitation, distinct from rapid reading</li>
+        <li><strong>Qira'at:</strong> The accepted recitation styles (traditionally seven, sometimes counted as ten), reflecting minor regional pronunciation variants preserved since the early compilation</li>
+        <li><strong>Tafsir:</strong> Scholarly exegesis providing historical and legal context for interpretation</li>
+      </ul>
+    </section>
+
+    <!-- Common Misconceptions -->
+    <section id="common-misconceptions" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-6">Common Misconceptions</h2>
+
+      <div class="space-y-4 mb-8">
+        <div class="p-5 bg-red-50/50 border border-red-100 rounded-2xl">
+          <h4 class="font-bold text-red-900 text-base mb-1">❌ Misconception: Muhammad (Sallallahu alaihi wasallam) wrote the Quran</h4>
+          <p class="text-gray-700 text-sm">Islamic theology explicitly rejects this. He is considered a recipient of revelation, not its author, and is traditionally described as unable to read or write.</p>
+        </div>
+        <div class="p-5 bg-red-50/50 border border-red-100 rounded-2xl">
+          <h4 class="font-bold text-red-900 text-base mb-1">❌ Misconception: Quran has no real structure</h4>
+          <p class="text-gray-700 text-sm">The Quran has a defined chapter-and-verse system, along with additional reading divisions (juz, hizb, manzil) designed for structured study and memorization.</p>
+        </div>
+        <div class="p-5 bg-red-50/50 border border-red-100 rounded-2xl">
+          <h4 class="font-bold text-red-900 text-base mb-1">❌ Misconception: Only Arabic speakers can read it</h4>
+          <p class="text-gray-700 text-sm">Translations are widely used for study. Muslims regard the Arabic text as uniquely significant to formal worship, but this does not restrict study in translation.</p>
+        </div>
+        <div class="p-5 bg-red-50/50 border border-red-100 rounded-2xl">
+          <h4 class="font-bold text-red-900 text-base mb-1">❌ Misconception: Arranged chronologically</h4>
+          <p class="text-gray-700 text-sm">It is not. Surahs are arranged primarily by length, not by the order in which they were revealed.</p>
+        </div>
+        <div class="p-5 bg-red-50/50 border border-red-100 rounded-2xl">
+          <h4 class="font-bold text-red-900 text-base mb-1">❌ Misconception: Non-Muslims cannot read it</h4>
+          <p class="text-gray-700 text-sm">There is no restriction on non-Muslims reading a translation or the Arabic text for study. Some traditions request ritual purity before physically handling an Arabic mushaf, a devotional custom rather than a prohibition on reading.</p>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-bold text-gray-800 mb-3">Common Beginner Mistakes</h3>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Reading the Quran cover-to-cover in surah order, expecting a linear narrative</li>
+        <li>Skipping historical context (asbab al-nuzul) on legally or historically dense verses</li>
+        <li>Assuming surah order reflects revelation order</li>
+        <li>Starting with Al-Baqarah, the longest and one of the most legally dense surahs, rather than shorter thematic surahs</li>
+      </ul>
+    </section>
+
+    <!-- Why Is the Quran Still Memorized Today? -->
+    <section id="why-is-the-quran-still-memorized-today" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">Why Is the Quran Still Memorized Today?</h2>
+      <p class="text-gray-700 leading-relaxed mb-6">
+        Full memorization of a 77,000-word text might seem unnecessary in an age of print and digital search, yet the practice has not declined if anything, formal hifz programs have expanded globally. Several factors explain why.
+      </p>
+
+      <div class="space-y-6">
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-base mb-2">1. Oral tradition predates the written text:</h4>
+          <p class="text-gray-700 text-sm">The Quran was preserved through memorization before it existed as a complete book (see How Was the Quran Preserved?). Memorization is not a later devotional add-on; it is the original transmission method, and the tradition of learning it by heart has simply continued unbroken for 1,400 years.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-base mb-2">2. Functions as a preservation safeguard:</h4>
+          <p class="text-gray-700 text-sm">Because millions of hafiz around the world hold the same text in memory, any printing error or textual alteration would be immediately detectable against a living, independent record, a built-in check that predates and now supplements the written manuscript tradition.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-base mb-2">3. Foundational to Islamic education:</h4>
+          <p class="text-gray-700 text-sm">Historically, memorizing some or all of the Quran was the first stage of formal education across the Islamic world, taught in institutions called maktab or kuttab before a student advanced to grammar, law, or theology. That structure still shapes religious education today in many countries.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-base mb-2">4. Required for worship, not optional study:</h4>
+          <p class="text-gray-700 text-sm">Recitation from memory rather than reading from a page — is standard in the five daily prayers and in leading congregational prayer (imamate). A working level of memorization is functionally necessary for religious practice, not just academic interest.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-base mb-2">5. Operates at a global scale:</h4>
+          <p class="text-gray-700 text-sm">Full-hifz academies operate across South Asia, the Middle East, Southeast Asia, Africa, and Muslim communities in Europe and North America. Countries such as Indonesia where Arabic is not a native language nonetheless produce large numbers of hafiz annually, demonstrating that the practice is sustained by devotional commitment rather than linguistic familiarity. International competitions, such as the Dubai International Holy Quran Award, draw memorizers from dozens of countries each year, judged on both accuracy and tajwid.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Long Does It Take to Memorize the Quran? -->
+    <section id="how-long-does-it-take-to-memorize-the-quran" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">How Long Does It Take to Memorize the Quran?</h2>
+      <p class="text-gray-700 leading-relaxed mb-6">
+        There is no single answer — completion time depends heavily on age, schedule intensity, and prior Arabic exposure. Approximate ranges reported by hifz institutions:
+      </p>
+
+      <div class="overflow-x-auto my-6 rounded-2xl border border-gray-200 shadow-sm bg-white">
+        <table class="w-full text-left text-sm text-gray-700 border-collapse">
+          <thead>
+            <tr class="bg-[#0A3A2F]/5 border-b border-gray-200 text-xs font-bold text-primary uppercase tracking-wider">
+              <th class="p-4 border-r border-gray-200">Path</th>
+              <th class="p-4 border-r border-gray-200">Typical Duration</th>
+              <th class="p-4">Notes</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Full-time child student (dedicated hifz madrasa)</td><td class="p-4 border-r border-gray-100 font-semibold text-primary">1–3 years</td><td class="p-4">Several hours daily, often replacing or supplementing general schooling</td></tr>
+            <tr class="bg-gray-50/50"><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Part-time adult learner</td><td class="p-4 border-r border-gray-100 font-semibold text-primary">3–7+ years</td><td class="p-4">Evenings/weekends alongside work or other study</td></tr>
+            <tr><td class="p-4 font-bold text-gray-900 border-r border-gray-100">Intensive residential program</td><td class="p-4 border-r border-gray-100 font-semibold text-primary">Under 1 year</td><td class="p-4">Rare; requires many hours daily and prior Quranic reading fluency</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed mt-4">
+        Two factors matter more than raw memorization speed. The first is <em>muraja'ah</em> (revision) memorizing the text once is not the same as retaining it permanently, and hafiz typically continue structured review for years, sometimes for life, to prevent forgetting. The second is prior fluency in reading Arabic script (even without full comprehension); students who can already read Quranic Arabic accurately tend to memorize substantially faster than those learning the script and the text simultaneously.
+      </p>
+    </section>
+
+    <!-- How the Quran Influenced Civilization -->
+    <section id="how-the-quran-influenced-civilization" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">How the Quran Influenced Civilization</h2>
+      <p class="text-gray-700 leading-relaxed mb-6">The Quran's influence extends well beyond religious practice, shaping several fields across the history of the Islamic world.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
+          <h4 class="font-bold text-primary text-lg mb-2">1. Arabic language</h4>
+          <p class="text-gray-700 text-sm">The Quran functions as the linguistic benchmark for Classical Arabic; its grammar, vocabulary, and style became the standard against which formal Arabic has been measured for over a millennium, contributing directly to the spread and standardization of the language across a geographically vast and linguistically diverse region.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
+          <h4 class="font-bold text-primary text-lg mb-2">2. Education</h4>
+          <p class="text-gray-700 text-sm">Quran memorization schools (maktab, kuttab) formed the base of literacy education across much of the historical Islamic world, and Quranic study was foundational to institutions that grew into some of the world's oldest continuously operating universities including the University of Al-Qarawiyyin in Fez, Morocco (founded 859 CE) and Cairo's Al-Azhar (founded 970 CE), both of which began as centers of Quranic and religious learning before expanding into broader scholarship.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
+          <h4 class="font-bold text-primary text-lg mb-2">3. Literature</h4>
+          <p class="text-gray-700 text-sm">Quranic rhetorical style including its distinctive rhymed prose (saj') influenced centuries of subsequent Arabic literary and poetic tradition, shaping prose style well beyond religious writing.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
+          <h4 class="font-bold text-primary text-lg mb-2">4. Calligraphy</h4>
+          <p class="text-gray-700 text-sm">Because Islamic tradition generally discourages figurative depiction in religious art, Arabic calligraphy developed as the primary visual art form associated with the faith, largely in service of reproducing the Quran itself. Distinct scripts including Kufic, Naskh, and Thuluth were developed specifically for Quranic manuscripts and later extended into architectural and decorative use.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
+          <h4 class="font-bold text-primary text-lg mb-2">5. Architecture</h4>
+          <p class="text-gray-700 text-sm">Quranic verses appear as structural ornamentation in some of the most significant buildings in Islamic history, including the Dome of the Rock in Jerusalem and the Alhambra in Granada. Mosque design itself from the mihrab's orientation toward Mecca to acoustic considerations for recitation developed in direct response to how the Holy Quran is read and heard in communal worship.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
+          <h4 class="font-bold text-primary text-lg mb-2">6. Law</h4>
+          <p class="text-gray-700 text-sm">Quranic verses form the primary textual basis for Islamic jurisprudence (fiqh), which developed into distinct legal schools (madhahib) including the Hanafi, Maliki, Shafi'i, and Hanbali traditions in Sunni Islam that shaped governance, commerce, and civil law across a succession of Islamic empires and continue to inform legal systems in parts of the world today.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Beginner's Roadmap -->
+    <section id="beginners-roadmap" class="scroll-mt-28">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">A Beginner's Roadmap</h2>
+      <p class="text-gray-700 leading-relaxed mb-6">For readers approaching the Quran for the first time:</p>
+
+      <div class="space-y-4">
+        <div class="flex items-start gap-4 p-5 bg-[#0A3A2F]/5 rounded-2xl">
+          <div class="w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center shrink-0">1</div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-base mb-1">Choose a reputable translation</h4>
+            <p class="text-gray-700 text-sm">Rather than a rigid, overly literal one. Abdel Haleem's Oxford translation and The Clear Quran are commonly recommended starting points.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-5 bg-[#0A3A2F]/5 rounded-2xl">
+          <div class="w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center shrink-0">2</div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-base mb-1">Avoid reading strictly cover-to-cover</h4>
+            <p class="text-gray-700 text-sm">Many newcomers begin with shorter, self-contained surahs Al-Fatiha, Al-Ikhlas, Ya-Sin — rather than the lengthy, legally focused Al-Baqarah.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-5 bg-[#0A3A2F]/5 rounded-2xl">
+          <div class="w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center shrink-0">3</div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-base mb-1">Pair reading with tafsir (commentary)</h4>
+            <p class="text-gray-700 text-sm">For historical context, particularly for verses referencing specific 7th-century events.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-5 bg-[#0A3A2F]/5 rounded-2xl">
+          <div class="w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center shrink-0">4</div>
+          <div>
+            <h4 class="font-bold text-gray-900 text-base mb-1">Note the Makki/Madani distinction</h4>
+            <p class="text-gray-700 text-sm">While reading, since it shapes the tone and legal weight of a given passage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+`,
+    author: "Al-Muslims Editorial Team",
+    authorImg: "https://i.pravatar.cc/150?u=quran-guide",
+    date: "2026-07-31",
+    displayDate: "July 31, 2026",
+    readTime: "12 min read",
+    image: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=1200",
+    color: "#0A3A2F",
+    level: "Beginner",
+    tableOfContents: [
+      { title: "Quick Answer", id: "quick-answer" },
+      { title: "Quick Facts", id: "quick-facts" },
+      { title: "Revelation Timeline (610–632 CE)", id: "revelation-timeline" },
+      { title: "What Does the Word \"Quran\" Mean?", id: "what-does-the-word-quran-mean" },
+      { title: "Who Revealed the Quran — and Who Wrote It?", id: "who-revealed-the-quran-and-who-wrote-it" },
+      { title: "Why Was the Quran Revealed?", id: "why-was-the-quran-revealed" },
+      { title: "How Was the Quran Preserved?", id: "how-was-the-quran-preserved" },
+      { title: "How Is the Quran Structured?", id: "how-is-the-quran-structured" },
+      { title: "What Language Is It In?", id: "what-language-is-it-in" },
+      { title: "What Does the Quran Teach?", id: "what-does-the-quran-teach" },
+      { title: "Quran vs. Bible", id: "quran-vs-bible" },
+      { title: "Quran, Hadith, and Sunnah", id: "quran-hadith-and-sunnah" },
+      { title: "How Muslims Use the Quran Today", id: "how-muslims-use-the-quran-today" },
+      { title: "Recitation and Study", id: "recitation-and-study" },
+      { title: "Common Misconceptions", id: "common-misconceptions" },
+      { title: "Why Is the Quran Still Memorized Today?", id: "why-is-the-quran-still-memorized-today" },
+      { title: "How Long Does It Take to Memorize the Quran?", id: "how-long-does-it-take-to-memorize-the-quran" },
+      { title: "How the Quran Influenced Civilization", id: "how-the-quran-influenced-civilization" },
+      { title: "A Beginner's Roadmap", id: "beginners-roadmap" },
+      { title: "Frequently Asked Questions", id: "faqs" }
+    ],
+    faqs: [
+      {
+        q: "What is the Quran in simple terms?",
+        a: "Islam's holy book believed to be the literal word of God, revealed to Muhammad (Sallallahu alaihi wasallam), covering belief, worship, law, and daily conduct."
+      },
+      {
+        q: "Who wrote the Quran?",
+        a: "According to Islamic belief, no human authored it. Muhammad (Sallallahu alaihi wasallam) received it through revelation; scribes recorded it, and it was compiled into a single book after his death."
+      },
+      {
+        q: "Who revealed the Quran to Muhammad (Sallallahu alaihi wasallam)?",
+        a: "The angel Gabriel (Jibril), transmitting the words of God."
+      },
+      {
+        q: "Why was the Quran revealed?",
+        a: "To restore monotheistic belief, provide moral and legal guidance, and confirm and correct earlier revelations given to Moses and Jesus."
+      },
+      {
+        q: "What language was the Quran written in?",
+        a: "Classical Arabic, in the dialect of the Quraysh tribe."
+      },
+      {
+        q: "How many surahs are in the Quran?",
+        a: "114, arranged primarily from longest to shortest."
+      },
+      {
+        q: "How many words are in the Quran?",
+        a: "Approximately 77,000–78,000 in the original Arabic; estimates vary slightly by counting method."
+      },
+      {
+        q: "What is a Mushaf?",
+        a: "The physical written copy of the Quran, as distinct from the revelation itself."
+      },
+      {
+        q: "What is the difference between Makki and Madani surahs?",
+        a: "Makki surahs were revealed in Mecca and emphasize belief and the afterlife. Madani surahs were revealed in Medina and emphasize law and community."
+      },
+      {
+        q: "What is the difference between the Quran and the Sunnah?",
+        a: "The Quran is God's direct speech. The Sunnah is Muhammad's (Sallallahu alaihi wasallam) recorded example, used to interpret and apply the Quran."
+      },
+      {
+        q: "What is the difference between the Quran and Hadith?",
+        a: "Hadith are individually recorded, separately graded reports of Muhammad's (Sallallahu alaihi wasallam) sayings and actions. The Quran is treated as a single, verbatim revelation."
+      },
+      {
+        q: "Is the Quran older than the Bible?",
+        a: "No. Both the Hebrew Bible and the New Testament predate the Quran, in some cases by close to a millennium."
+      },
+      {
+        q: "Has the Quran remained unchanged?",
+        a: "Yes. Muslims believe so, citing continuous oral memorization since the 7th century alongside early manuscript evidence. Academic textual criticism of manuscript variants continues."
+      },
+      {
+        q: "Can non-Muslims read the Quran?",
+        a: "Yes. There is no restriction on reading a translation or the Arabic text for study purposes."
+      },
+      {
+        q: "Is the Quran difficult to understand for beginners?",
+        a: "It can be, particularly the legally dense Madani surahs. A paired commentary (tafsir) is commonly recommended."
+      },
+      {
+        q: "Which Quran translation is easiest for beginners?",
+        a: "The Clear Quran (Khattab) and Abdel Haleem's Oxford translation are frequently recommended for accessible modern English."
+      },
+      {
+        q: "Is the Quran arranged in the order it was revealed?",
+        a: "No. It is arranged primarily by surah length, not revelation chronology."
+      },
+      {
+        q: "What is the shortest surah in the Quran?",
+        a: "Al-Kawthar, with three verses."
+      },
+      {
+        q: "What is the longest surah in the Quran?",
+        a: "Al-Baqarah, with 286 verses."
+      },
+      {
+        q: "Does the Quran mention Jesus?",
+        a: "Yes, in more than 20 verses. He is honored as a prophet and Messiah, though the Quran does not affirm his divinity."
+      },
+      {
+        q: "Does the Quran mention science?",
+        a: "The Quran describes natural phenomena that some modern commentators interpret as compatible with scientific understanding. This remains a subject of ongoing theological and academic discussion."
+      },
+      {
+        q: "What is Tajwid?",
+        a: "The set of rules governing correct pronunciation and articulation when reciting the Quran aloud."
+      },
+      {
+        q: "What is Hafiz?",
+        a: "A person who has memorized the entire Quran."
+      },
+      {
+        q: "How long does it take to read the entire Quran?",
+        a: "This varies by reader. Many Muslims complete a full reading (khatm) over the 30 days of Ramadan, using the 30-juz structure designed for that purpose."
+      },
+      {
+        q: "How long does it take to memorize the Quran?",
+        a: "It varies significantly. Full-time child students in dedicated hifz programs often complete memorization in 1–3 years; part-time adult learners typically take 3–7 years or longer. Ongoing revision (muraja'ah) continues well after initial memorization to maintain retention."
+      },
+      {
+        q: "Why do Muslims still memorize the Quran when printed copies are widely available?",
+        a: "Memorization predates the written text, serves as a continuing safeguard against textual error, remains foundational to Islamic religious education, and is functionally required for leading or performing the five daily prayers from memory."
+      },
+      {
+        q: "How did the Quran influence Islamic civilization?",
+        a: "Its influence extends to Arabic language standardization, the founding of early Islamic universities, Arabic literary style, the development of calligraphy as a major art form, mosque architecture, and the legal schools (madhahib) underlying Islamic jurisprudence."
+      }
+    ]
+  },
   {
     id: "1",
     slug: "lessons-from-surah-al-kahf",

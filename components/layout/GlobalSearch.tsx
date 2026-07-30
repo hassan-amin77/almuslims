@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { fiqhCategories } from "@/data/hadith-collections";
-import { articles } from "@/data/articles";
+import { articles, getArticleUrl } from "@/data/articles";
 import { FaSearch, FaTimes, FaBook, FaParagraph, FaHistory, FaStar } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { getSurahSlug } from "@/lib/quran";
@@ -123,7 +123,7 @@ export default function GlobalSearch() {
         matches.push({
           title: art.title,
           category: "Articles",
-          link: `/blog/${art.slug}`,
+          link: getArticleUrl(art),
           description: art.excerpt,
         });
       }

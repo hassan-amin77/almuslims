@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { HiArrowRight } from "react-icons/hi";
-import { articles } from "@/data/articles";
+import { articles, getArticleUrl } from "@/data/articles";
 
 // Sort by date descending to always show the newest articles first
 const sortedArticles = [...articles].sort(
@@ -34,7 +34,7 @@ export default function FeaturedArticles() {
         {/* Featured Card (Left - 40%) */}
         {featuredArticle && (
           <Link
-            href={`/blog/${featuredArticle.slug}`}
+            href={getArticleUrl(featuredArticle)}
             className="lg:col-span-2 group flex flex-col rounded-[32px] overflow-hidden bg-white border border-gray-100 transition-all duration-500"
           >
             <div className="relative w-full h-[300px] lg:h-[400px] bg-gray-100 overflow-hidden">
@@ -69,7 +69,7 @@ export default function FeaturedArticles() {
           {sideArticles.map((article) => (
             <Link
               key={article.id}
-              href={`/blog/${article.slug}`}
+              href={getArticleUrl(article)}
               className="group flex flex-col sm:flex-row gap-6 bg-white rounded-[32px] border border-gray-100 overflow-hidden transition-all duration-500 p-4"
             >
               <div className="relative w-full sm:w-56 h-48 sm:h-auto shrink-0 bg-gray-100 rounded-[24px] overflow-hidden">

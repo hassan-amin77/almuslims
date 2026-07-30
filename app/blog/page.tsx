@@ -19,7 +19,7 @@ import {
    HiOutlineQueueList,
    HiOutlineMap
 } from "react-icons/hi2";
-import { articles, Article } from "@/data/articles";
+import { articles, Article, getArticleUrl } from "@/data/articles";
 
 // ─── Static Data ─────────────────────────────────────────────────────────────
 
@@ -36,7 +36,7 @@ const categories = [
 
 function ArticleCard({ article }: { article: Article }) {
    return (
-      <Link href={`/blog/${article.slug}`} className="block h-full group">
+      <Link href={getArticleUrl(article)} className="block h-full group">
          <motion.div
             layout
             className="bg-white rounded-3xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full"
@@ -451,7 +451,7 @@ function BlogPageContent() {
                                        <p className="text-white/50 text-[11px] font-medium uppercase tracking-widest">{featuredInsight.displayDate}</p>
                                     </div>
                                  </div>
-                                 <Link href={`/blog/${featuredInsight.slug}`} className="ml-auto bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-black text-[12px] sm:text-[13px] uppercase tracking-widest hover:bg-secondary hover:text-white transition-all">
+                                 <Link href={getArticleUrl(featuredInsight)} className="ml-auto bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-black text-[12px] sm:text-[13px] uppercase tracking-widest hover:bg-secondary hover:text-white transition-all">
                                     Read Full Article
                                  </Link>
                               </div>
