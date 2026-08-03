@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useMemo } from "react";
+import React from "react";
 import { articles } from "@/data/articles";
 import ArticleView from "@/components/modules/blog/ArticleView";
 import Link from "next/link";
@@ -9,20 +7,16 @@ interface PageProps {
   params: Promise<{ category: string; slug: string }>;
 }
 
-export default function CategoryArticlePage({ params }: PageProps) {
-  const unwrappedParams = React.use(params);
-  const { category, slug } = unwrappedParams;
+export default async function CategoryArticlePage({ params }: PageProps) {
+  const { category, slug } = await params;
 
-  const article = useMemo(() => {
-    return (
-      articles.find(
-        (a) =>
-          (a.slug === slug || a.id === slug) &&
-          (a.categoryId.toLowerCase() === category.toLowerCase() ||
-            a.category.toLowerCase().replace(/\s+/g, "-") === category.toLowerCase())
-      ) || articles.find((a) => a.slug === slug || a.id === slug)
-    );
-  }, [category, slug]);
+  const article =
+    articles.find(
+      (a) =>
+        (a.slug === slug || String(a.id) === String(slug)) &&
+        (a.categoryId.toLowerCase() === category.toLowerCase() ||
+          a.category.toLowerCase().replace(/\s+/g, "-") === category.toLowerCase())
+    ) || articles.find((a) => a.slug === slug || String(a.id) === String(slug));
 
   if (!article) {
     return (

@@ -47,7 +47,7 @@ function ArticleCard({ article }: { article: Article }) {
                   alt={article.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-w-768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                />
                <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
                <span className="absolute top-4 left-4 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg uppercase tracking-wider">
@@ -310,7 +310,7 @@ function BlogPageContent() {
                               alt="Islamic Journey"
                               fill
                               className="object-cover"
-                              sizes="(max-w-1024px) 100vw, 40vw"
+                              sizes="(max-width: 1024px) 100vw, 40vw"
                            />
                            <div className="absolute inset-0 bg-linear-to-tr from-primary/40 via-transparent to-transparent pointer-events-none" />
                         </div>

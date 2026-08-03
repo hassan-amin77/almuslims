@@ -1,20 +1,17 @@
-"use client";
-
-import React, { useMemo } from "react";
+import React from "react";
 import { articles } from "@/data/articles";
 import ArticleView from "@/components/modules/blog/ArticleView";
 
 interface PageProps {
-  params: React.ComponentProps<any>['params'];
+  params: Promise<{ id: string }>;
 }
 
-export default function ArticleDetail({ params }: PageProps) {
-  const unwrappedParams = React.use(params) as { id: string };
-  const { id } = unwrappedParams;
+export default async function ArticleDetail({ params }: PageProps) {
+  const { id } = await params;
 
-  const article = useMemo(() => {
-    return articles.find(a => a.slug === id || a.id === id) || articles[0];
-  }, [id]);
+  const article = articles.find(
+    (a) => a.slug === id || String(a.id) === String(id)
+  ) || articles[0];
 
   return <ArticleView article={article} />;
 }

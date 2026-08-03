@@ -4,10 +4,11 @@ import React, { useMemo, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  HiChevronRight, HiCalendar, HiClock,
+  HiChevronRight,
   HiChevronDown, HiChevronUp, HiSearch, HiSparkles
 } from "react-icons/hi";
 import { articles, Article, getArticleUrl } from "@/data/articles";
+import ArticleContent from "./ArticleContent";
 
 interface ArticleViewProps {
   article: Article;
@@ -160,7 +161,7 @@ export default function ArticleView({ article }: ArticleViewProps) {
 
             {/* Content Body */}
             <div className="prose prose-lg max-w-none prose-emerald text-gray-800">
-              <div dangerouslySetInnerHTML={{ __html: article.content }} />
+              <ArticleContent content={article.content} />
             </div>
 
             {/* FAQs Section */}

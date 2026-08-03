@@ -60,7 +60,7 @@ export default function HeroSection() {
             fill
             priority={true} 
             className="object-cover object-bottom select-none" 
-            sizes="(max-w-1024px) 100vw, 50vw"
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </motion.div>
 

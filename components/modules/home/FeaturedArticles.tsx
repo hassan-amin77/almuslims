@@ -44,7 +44,7 @@ export default function FeaturedArticles() {
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                 priority
-                sizes="(max-w-1024px) 100vw, 40vw"
+                sizes="(max-width: 1024px) 100vw, 40vw"
               />
               <span className="absolute top-4 left-4 bg-secondary text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">
                 {featuredArticle.category}
@@ -78,7 +78,7 @@ export default function FeaturedArticles() {
                   alt={article.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-w-640px) 100vw, 25vw"
+                  sizes="(max-width: 640px) 100vw, 25vw"
                 />
               </div>
 
