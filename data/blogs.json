@@ -18,10 +18,7 @@
     "featured": true,
     "level": "Beginner",
     "tableOfContents": [
-      {
-        "title": "Quick Answer",
-        "id": "quick-answer"
-      },
+
       {
         "title": "Quick Facts",
         "id": "quick-facts"
@@ -210,11 +207,6 @@
       }
     ],
     "content": [
-      {
-        "type": "heading2",
-        "id": "quick-answer",
-        "text": "Quick Answer"
-      },
       {
         "type": "paragraph",
         "text": "The Quran is the central religious text of Islam. Muslims hold it to be the literal, unaltered word of God (Allah), revealed in Arabic to the Prophet Muhammad (PBUH) between 610 and 632 CE through the angel Gabriel (Jibril). It consists of 114 chapters (surahs) and approximately 6,236 verses (ayat), totaling roughly 77,000–78,000 words in the original Arabic."

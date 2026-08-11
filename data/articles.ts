@@ -55,8 +55,8 @@ export const articles: Article[] = [
   <div class="space-y-10">
 
     <!-- Quick Answer -->
-    <section id="quick-answer" class="scroll-mt-28">
-      <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">Quick Answer</h2>
+    <section id="quick-answer" class="scroll-mt-16">
+      
       <p class="text-lg text-gray-700 leading-relaxed mb-4">
         The Quran is the central religious text of Islam. Muslims hold it to be the literal, unaltered word of God (Allah), revealed in Arabic to the Prophet Muhammad (PBUH) between 610 and 632 CE through the angel Gabriel (Jibril). It consists of 114 chapters (surahs) and approximately 6,236 verses (ayat), totaling roughly 77,000–78,000 words in the original Arabic.
       </p>
@@ -173,23 +173,11 @@ export const articles: Article[] = [
     <section id="who-revealed-the-quran-and-who-wrote-it" class="scroll-mt-28">
       <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">Who Revealed the Quran — and Who Wrote It?</h2>
       <p class="text-gray-700 leading-relaxed mb-6">These are frequently conflated, though they refer to distinct roles.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-          <h4 class="font-bold text-primary text-base mb-2">Revealer:</h4>
-          <p class="text-gray-700 text-sm">In Islamic belief, God is the source of the Quran's content and exact wording.</p>
-        </div>
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-          <h4 class="font-bold text-primary text-base mb-2">Transmitter:</h4>
-          <p class="text-gray-700 text-sm">The angel Gabriel (Jibril) delivered the revelation to Muhammad (Sallallahu alaihi wasallam).</p>
-        </div>
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-          <h4 class="font-bold text-primary text-base mb-2">Recipient:</h4>
-          <p class="text-gray-700 text-sm">Muhammad (Sallallahu alaihi wasallam) received the revelations but is not considered their author. Islamic theology explicitly rejects the idea that he composed the text, a position reinforced by his traditional description as <em>ummi</em> (unlettered), unable to read or write (Quran 29:48).</p>
-        </div>
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-          <h4 class="font-bold text-primary text-base mb-2">Scribes:</h4>
-          <p class="text-gray-700 text-sm">Companions recorded verses as they were revealed, using palm-leaf stalks, flat stones, and parchment. The ordered, bound compilation came only after Muhammad's (Sallallahu alaihi wasallam) death.</p>
-        </div>
+      <div class="space-y-4 text-gray-700 leading-relaxed">
+        <p><strong class="text-primary">Revealer:</strong> In Islamic belief, God is the source of the Quran's content and exact wording.</p>
+        <p><strong class="text-primary">Transmitter:</strong> The angel Gabriel (Jibril) delivered the revelation to Muhammad (Sallallahu alaihi wasallam).</p>
+        <p><strong class="text-primary">Recipient:</strong> Muhammad (Sallallahu alaihi wasallam) received the revelations but is not considered their author. Islamic theology explicitly rejects the idea that he composed the text, a position reinforced by his traditional description as <em>ummi</em> (unlettered), unable to read or write (Quran 29:48).</p>
+        <p><strong class="text-primary">Scribes:</strong> Companions recorded verses as they were revealed, using palm-leaf stalks, flat stones, and parchment. The ordered, bound compilation came only after Muhammad's (Sallallahu alaihi wasallam) death.</p>
       </div>
     </section>
 
@@ -208,6 +196,7 @@ export const articles: Article[] = [
     <!-- How Was the Quran Preserved? -->
     <section id="how-was-the-quran-preserved" class="scroll-mt-28">
       <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">How Was the Quran Preserved?</h2>
+      <img src="/blogs/Quran/what-is-quran/how-was-the-quran-preserved.webp" alt="how-was-the-quran-preserved" class="w-full h-64 object-cover rounded-2xl mb-6" />
       <p class="text-gray-700 leading-relaxed mb-6">Islamic scholarship identifies two parallel preservation methods.</p>
       
       <div class="space-y-6">
@@ -229,6 +218,7 @@ export const articles: Article[] = [
     <!-- How Is the Quran Structured? -->
     <section id="how-is-the-quran-structured" class="scroll-mt-28">
       <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-6">How Is the Quran Structured?</h2>
+      <img src="/blogs/Quran/what-is-quran/how-is-the-quran-structured.webp" alt="how-is-the-quran-structured" class="w-full h-64 object-cover rounded-2xl mb-6" />
       
       <h3 class="text-xl font-bold text-gray-800 mb-3">Surahs (Chapters)</h3>
       <p class="text-gray-700 leading-relaxed mb-4">
@@ -307,25 +297,25 @@ export const articles: Article[] = [
       <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">What Does the Quran Teach?</h2>
       <p class="text-gray-700 leading-relaxed mb-6">The Quran's teachings span several distinct thematic categories. Each is treated separately below for clarity.</p>
 
-      <div class="space-y-6">
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-          <h4 class="font-bold text-gray-900 text-lg mb-2">Monotheism (Tawhid)</h4>
+      <div class="">
+        <div class="bg-gray-50 p-2 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-lg ">Monotheism (Tawhid)</h4>
           <p class="text-gray-700">The Quran's most consistently repeated theme is <em>tawhid</em>, the absolute oneness of God. Surah Al-Ikhlas (Quran 112:1–4) is frequently cited as the clearest concise statement of this doctrine.</p>
         </div>
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-          <h4 class="font-bold text-gray-900 text-lg mb-2">Prophets and Shared Figures</h4>
+        <div class="bg-gray-50 p-2 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-lg ">Prophets and Shared Figures</h4>
           <p class="text-gray-700">The Quran discusses many figures found in Jewish and Christian scripture, including Adam, Noah, Abraham, and Moses, generally reframed within an Islamic theological structure. Jesus (Isa) appears by name in more than 20 verses, including a detailed account of his birth to the Virgin Mary (Quran 19:16–34). He is honored as a prophet and the Messiah, but the Quran explicitly rejects his divinity and the doctrine of the Trinity (Quran 5:116).</p>
         </div>
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-          <h4 class="font-bold text-gray-900 text-lg mb-2">The Unseen World</h4>
+        <div class="bg-gray-50 p-2 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-lg ">The Unseen World</h4>
           <p class="text-gray-700">The Quran describes jinn beings created from "smokeless fire" (Quran 15:27), distinct from both angels and humans, and possessing free will. Surah Al-Jinn (Quran 72) is devoted entirely to this subject.</p>
         </div>
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-          <h4 class="font-bold text-gray-900 text-lg mb-2">The Afterlife</h4>
+        <div class="bg-gray-50 p-2 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-lg ">The Afterlife</h4>
           <p class="text-gray-700">Paradise (Jannah) and hell (Jahannam) are described in extensive, sensory detail throughout the text, tied consistently to themes of moral accountability and final judgment.</p>
         </div>
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-          <h4 class="font-bold text-gray-900 text-lg mb-2">Law and Ethics</h4>
+        <div class="bg-gray-50 p-2 rounded-2xl border border-gray-100">
+          <h4 class="font-bold text-gray-900 text-lg ">Law and Ethics</h4>
           <p class="text-gray-700">Verses addressing marriage, inheritance, commerce, and criminal justice form a foundational though not sole source of Islamic jurisprudence (sharia), alongside the Sunnah.</p>
         </div>
       </div>
@@ -379,6 +369,7 @@ export const articles: Article[] = [
     <!-- How Muslims Use the Quran Today -->
     <section id="how-muslims-use-the-quran-today" class="scroll-mt-28">
       <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">How Muslims Use the Quran Today</h2>
+      <img src="/blogs/Quran/what-is-quran/how-muslims-use-the-quran-today.webp" alt="how-muslims-use-the-quran-today" class="w-full h-64 object-cover rounded-2xl mb-6" />
       <p class="text-gray-700 leading-relaxed mb-6">The Quran is embedded in daily and seasonal religious practice through specific, structured routines:</p>
 
       <div class="space-y-4 text-gray-700">
@@ -401,7 +392,7 @@ export const articles: Article[] = [
     <!-- Recitation and Study -->
     <section id="recitation-and-study" class="scroll-mt-28">
       <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">Recitation and Study</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">Several disciplines govern how the Holy Quran is read and interpreted:</p>
+      <p class="text-gray-700 leading-relaxed mb-4">Several disciplines govern how the <b><a href='/holy-quran'>Holy Quran</a></b> is read and interpreted:</p>
       
       <ul class="list-disc pl-6 space-y-3 text-gray-700">
         <li><strong>Tajwid:</strong> The rules of correct pronunciation and articulation during recitation</li>
@@ -416,24 +407,24 @@ export const articles: Article[] = [
       <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-6">Common Misconceptions</h2>
 
       <div class="space-y-4 mb-8">
-        <div class="p-5 bg-red-50/50 border border-red-100 rounded-2xl">
-          <h4 class="font-bold text-red-900 text-base mb-1">❌ Misconception: Muhammad (Sallallahu alaihi wasallam) wrote the Quran</h4>
+        <div class="p-2 bg-red-50/50 border border-red-100 rounded-2xl">
+          <h4 class="font-bold text-red-900 text-base mb-1"> Misconception: Muhammad (Sallallahu alaihi wasallam) wrote the Quran</h4>
           <p class="text-gray-700 text-sm">Islamic theology explicitly rejects this. He is considered a recipient of revelation, not its author, and is traditionally described as unable to read or write.</p>
         </div>
-        <div class="p-5 bg-red-50/50 border border-red-100 rounded-2xl">
-          <h4 class="font-bold text-red-900 text-base mb-1">❌ Misconception: Quran has no real structure</h4>
+        <div class="p-2 bg-red-50/50 border border-red-100 rounded-2xl">
+          <h4 class="font-bold text-red-900 text-base mb-1"> Misconception: Quran has no real structure</h4>
           <p class="text-gray-700 text-sm">The Quran has a defined chapter-and-verse system, along with additional reading divisions (juz, hizb, manzil) designed for structured study and memorization.</p>
         </div>
-        <div class="p-5 bg-red-50/50 border border-red-100 rounded-2xl">
-          <h4 class="font-bold text-red-900 text-base mb-1">❌ Misconception: Only Arabic speakers can read it</h4>
+        <div class="p-2 bg-red-50/50 border border-red-100 rounded-2xl">
+          <h4 class="font-bold text-red-900 text-base mb-1"> Misconception: Only Arabic speakers can read it</h4>
           <p class="text-gray-700 text-sm">Translations are widely used for study. Muslims regard the Arabic text as uniquely significant to formal worship, but this does not restrict study in translation.</p>
         </div>
-        <div class="p-5 bg-red-50/50 border border-red-100 rounded-2xl">
-          <h4 class="font-bold text-red-900 text-base mb-1">❌ Misconception: Arranged chronologically</h4>
+        <div class="p-2 bg-red-50/50 border border-red-100 rounded-2xl">
+          <h4 class="font-bold text-red-900 text-base mb-1"> Misconception: Arranged chronologically</h4>
           <p class="text-gray-700 text-sm">It is not. Surahs are arranged primarily by length, not by the order in which they were revealed.</p>
         </div>
         <div class="p-5 bg-red-50/50 border border-red-100 rounded-2xl">
-          <h4 class="font-bold text-red-900 text-base mb-1">❌ Misconception: Non-Muslims cannot read it</h4>
+          <h4 class="font-bold text-red-900 text-base mb-1"> Misconception: Non-Muslims cannot read it</h4>
           <p class="text-gray-700 text-sm">There is no restriction on non-Muslims reading a translation or the Arabic text for study. Some traditions request ritual purity before physically handling an Arabic mushaf, a devotional custom rather than a prohibition on reading.</p>
         </div>
       </div>
@@ -509,34 +500,18 @@ export const articles: Article[] = [
 
     <!-- How the Quran Influenced Civilization -->
     <section id="how-the-quran-influenced-civilization" class="scroll-mt-28">
+      
       <h2 class="text-2xl sm:text-3xl font-bold text-primary font-heading mb-4">How the Quran Influenced Civilization</h2>
+      <img src="/blogs/Quran/what-is-quran/how-the-quran-influenced-civilization.webp" alt="how-the-quran-influenced-civilization" class="w-full h-64 object-cover rounded-2xl mb-6" />
       <p class="text-gray-700 leading-relaxed mb-6">The Quran's influence extends well beyond religious practice, shaping several fields across the history of the Islamic world.</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
-          <h4 class="font-bold text-primary text-lg mb-2">1. Arabic language</h4>
-          <p class="text-gray-700 text-sm">The Quran functions as the linguistic benchmark for Classical Arabic; its grammar, vocabulary, and style became the standard against which formal Arabic has been measured for over a millennium, contributing directly to the spread and standardization of the language across a geographically vast and linguistically diverse region.</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
-          <h4 class="font-bold text-primary text-lg mb-2">2. Education</h4>
-          <p class="text-gray-700 text-sm">Quran memorization schools (maktab, kuttab) formed the base of literacy education across much of the historical Islamic world, and Quranic study was foundational to institutions that grew into some of the world's oldest continuously operating universities including the University of Al-Qarawiyyin in Fez, Morocco (founded 859 CE) and Cairo's Al-Azhar (founded 970 CE), both of which began as centers of Quranic and religious learning before expanding into broader scholarship.</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
-          <h4 class="font-bold text-primary text-lg mb-2">3. Literature</h4>
-          <p class="text-gray-700 text-sm">Quranic rhetorical style including its distinctive rhymed prose (saj') influenced centuries of subsequent Arabic literary and poetic tradition, shaping prose style well beyond religious writing.</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
-          <h4 class="font-bold text-primary text-lg mb-2">4. Calligraphy</h4>
-          <p class="text-gray-700 text-sm">Because Islamic tradition generally discourages figurative depiction in religious art, Arabic calligraphy developed as the primary visual art form associated with the faith, largely in service of reproducing the Quran itself. Distinct scripts including Kufic, Naskh, and Thuluth were developed specifically for Quranic manuscripts and later extended into architectural and decorative use.</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
-          <h4 class="font-bold text-primary text-lg mb-2">5. Architecture</h4>
-          <p class="text-gray-700 text-sm">Quranic verses appear as structural ornamentation in some of the most significant buildings in Islamic history, including the Dome of the Rock in Jerusalem and the Alhambra in Granada. Mosque design itself from the mihrab's orientation toward Mecca to acoustic considerations for recitation developed in direct response to how the Holy Quran is read and heard in communal worship.</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
-          <h4 class="font-bold text-primary text-lg mb-2">6. Law</h4>
-          <p class="text-gray-700 text-sm">Quranic verses form the primary textual basis for Islamic jurisprudence (fiqh), which developed into distinct legal schools (madhahib) including the Hanafi, Maliki, Shafi'i, and Hanbali traditions in Sunni Islam that shaped governance, commerce, and civil law across a succession of Islamic empires and continue to inform legal systems in parts of the world today.</p>
-        </div>
+      <div class="space-y-4 text-gray-700 leading-relaxed">
+        <p><strong class="text-primary">1. Arabic language:</strong> The Quran functions as the linguistic benchmark for Classical Arabic; its grammar, vocabulary, and style became the standard against which formal Arabic has been measured for over a millennium, contributing directly to the spread and standardization of the language across a geographically vast and linguistically diverse region.</p>
+        <p><strong class="text-primary">2. Education:</strong> Quran memorization schools (maktab, kuttab) formed the base of literacy education across much of the historical Islamic world, and Quranic study was foundational to institutions that grew into some of the world's oldest continuously operating universities including the University of Al-Qarawiyyin in Fez, Morocco (founded 859 CE) and Cairo's Al-Azhar (founded 970 CE), both of which began as centers of Quranic and religious learning before expanding into broader scholarship.</p>
+        <p><strong class="text-primary">3. Literature:</strong> Quranic rhetorical style including its distinctive rhymed prose (saj') influenced centuries of subsequent Arabic literary and poetic tradition, shaping prose style well beyond religious writing.</p>
+        <p><strong class="text-primary">4. Calligraphy:</strong> Because Islamic tradition generally discourages figurative depiction in religious art, Arabic calligraphy developed as the primary visual art form associated with the faith, largely in service of reproducing the Quran itself. Distinct scripts including Kufic, Naskh, and Thuluth were developed specifically for Quranic manuscripts and later extended into architectural and decorative use.</p>
+        <p><strong class="text-primary">5. Architecture:</strong> Quranic verses appear as structural ornamentation in some of the most significant buildings in Islamic history, including the Dome of the Rock in Jerusalem and the Alhambra in Granada. Mosque design itself from the mihrab's orientation toward Mecca to acoustic considerations for recitation developed in direct response to how the Holy Quran is read and heard in communal worship.</p>
+        <p><strong class="text-primary">6. Law:</strong> Quranic verses form the primary textual basis for Islamic jurisprudence (fiqh), which developed into distinct legal schools (madhahib) including the Hanafi, Maliki, Shafi'i, and Hanbali traditions in Sunni Islam that shaped governance, commerce, and civil law across a succession of Islamic empires and continue to inform legal systems in parts of the world today.</p>
       </div>
     </section>
 
