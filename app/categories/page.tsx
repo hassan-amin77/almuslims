@@ -131,6 +131,32 @@ function CategoriesPageContent() {
   const articleSectionRef = useRef<HTMLDivElement>(null);
   const ARTICLES_PER_PAGE = 6;
 
+  // Dynamic category list with real article counts
+  const dynamicCategories = useMemo(() => {
+    return categoriesMeta.map((cat) => {
+      const count =
+        cat.id === "all"
+          ? articles.length
+          : articles.filter(
+              (a) => a.categoryId.toLowerCase() === cat.id.toLowerCase()
+            ).length;
+      return { ...cat, count };
+    });
+  }, []);
+
+  // Dynamic topic list with real article counts
+  const dynamicTopics = useMemo(() => {
+    return popularTopics.map((topic) => {
+      const count = articles.filter(
+        (a) =>
+          (a.topics && a.topics.some((t) => t.toLowerCase() === topic.name.toLowerCase())) ||
+          a.category.toLowerCase() === topic.name.toLowerCase() ||
+          a.categoryId.toLowerCase() === topic.categoryId.toLowerCase()
+      ).length;
+      return { ...topic, count: Math.max(count, 1) };
+    });
+  }, []);
+
   // Sync category param from URL
   useEffect(() => {
     const cat = searchParams.get("category");
@@ -176,12 +202,15 @@ function CategoriesPageContent() {
     setTimeout(() => setToastMessage(null), 3000);
   };
 
-  // Find Featured Article (default to featured or highest priority)
+  // Find Featured Article (strictly from active category if category is selected)
   const featuredArticle = useMemo(() => {
+    if (activeCategory === "all") {
+      return articles.find((a) => a.isFeatured) || articles[0];
+    }
     return (
-      articles.find((a) => a.isFeatured) ||
-      articles.find((a) => a.categoryId === activeCategory) ||
-      articles[0]
+      articles.find((a) => a.categoryId.toLowerCase() === activeCategory.toLowerCase() && a.isFeatured) ||
+      articles.find((a) => a.categoryId.toLowerCase() === activeCategory.toLowerCase()) ||
+      null
     );
   }, [activeCategory]);
 
@@ -306,7 +335,7 @@ function CategoriesPageContent() {
     <div className="bg-[#FAF7F2] min-h-screen font-body text-gray-800 pb-16">
       {/* Structured Data for AEO & Search Engines */}
       <BreadcrumbJsonLd items={breadcrumbs} />
-      <CategoriesItemListJsonLd categories={categoriesMeta} />
+      <CategoriesItemListJsonLd categories={dynamicCategories} />
       
       {/* Toast Notification */}
       <AnimatePresence>
@@ -340,11 +369,11 @@ function CategoriesPageContent() {
           <nav className="flex items-center gap-2 text-xs font-semibold text-gray-500 mb-3">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
             <span className="text-gray-300">›</span>
-            <span className="text-secondary font-bold">Categories</span>
+            <Link href="/categories" className="text-secondary font-bold hover:underline">Categories</Link>
             {activeCategory !== "all" && (
               <>
                 <span className="text-gray-300">›</span>
-                <span className="text-primary capitalize">{activeCategory}</span>
+                <span className="text-primary font-bold capitalize">{activeCategory}</span>
               </>
             )}
           </nav>
@@ -353,10 +382,10 @@ function CategoriesPageContent() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <div className="max-w-2xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-primary tracking-tight leading-tight">
-                Explore Categories
+                {activeCategory === "all" ? "Explore Categories" : `${activeCategory.toUpperCase()} Hub`}
               </h1>
               <p className="mt-2 text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
-                Authentic knowledge from the Quran, Sunnah and scholars on every aspect of life.
+                Authentic scholarly knowledge from the Quran, Sunnah, Seerah and scholars on every aspect of Islamic life.
               </p>
             </div>
 
@@ -364,10 +393,10 @@ function CategoriesPageContent() {
             <div className="hidden lg:flex items-center gap-6 bg-white/70 backdrop-blur-xs px-5 py-2.5 rounded-2xl border border-amber-900/10 shadow-xs">
               <div className="flex items-center gap-2.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
-                <span className="text-xs font-bold text-gray-700">296+ Articles</span>
+                <span className="text-xs font-bold text-gray-700">{articles.length} Verified Articles</span>
               </div>
               <div className="w-px h-4 bg-gray-200" />
-              <span className="text-xs font-semibold text-gray-500">8 Core Disciplines</span>
+              <span className="text-xs font-semibold text-gray-500">{dynamicCategories.length - 1} Disciplines</span>
             </div>
           </div>
         </div>
@@ -378,7 +407,7 @@ function CategoriesPageContent() {
         <div className="flex items-center justify-between gap-2 mb-3 px-1">
           <span className="text-xs font-bold uppercase tracking-wider text-gray-400">Featured Streams</span>
           <button 
-            onClick={() => setActiveCategory("all")}
+            onClick={() => handleCategorySelect("all")}
             className="text-xs font-bold text-secondary hover:text-primary transition-colors flex items-center gap-1 cursor-pointer"
           >
             <span>View All</span>
@@ -388,8 +417,8 @@ function CategoriesPageContent() {
 
         {/* Scrollable Category Row */}
         <div className="flex overflow-x-auto pb-4 pt-1 gap-3.5 -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-          {categoriesMeta.map((cat) => {
-            const isSelected = activeCategory === cat.id || (cat.id === "all" && activeCategory === "all");
+          {dynamicCategories.map((cat) => {
+            const isSelected = activeCategory.toLowerCase() === cat.id.toLowerCase() || (cat.id === "all" && activeCategory === "all");
             return (
               <button
                 key={cat.id}
@@ -429,7 +458,7 @@ function CategoriesPageContent() {
                   <p className={`text-[11px] font-medium mt-0.5 ${
                     isSelected ? "text-emerald-100/80" : "text-gray-400"
                   }`}>
-                    {cat.count} Articles
+                    {cat.count} {cat.count === 1 ? "Article" : "Articles"}
                   </p>
                 </div>
               </button>
@@ -511,7 +540,7 @@ function CategoriesPageContent() {
             className="bg-white/80 backdrop-blur-xs rounded-xl p-3 mt-2 border border-gray-100 flex flex-wrap items-center gap-2"
           >
             <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mr-1">Filter by Topic:</span>
-            {popularTopics.map((topic) => {
+            {dynamicTopics.map((topic) => {
               const isSelected = selectedTopic.toLowerCase() === topic.name.toLowerCase();
               return (
                 <button
@@ -524,7 +553,7 @@ function CategoriesPageContent() {
                       : "bg-[#FAF7F2] text-gray-600 hover:bg-gray-200/70"
                   }`}
                 >
-                  {topic.name} ({topic.count})
+                  #{topic.name} ({topic.count})
                 </button>
               );
             })}
@@ -548,7 +577,7 @@ function CategoriesPageContent() {
           {/* ════════════ Left Column: Featured + Article Grid (8 Cols) ════════════ */}
           <div className="lg:col-span-8 space-y-8">
             
-            {/* 1. Featured Article Card */}
+            {/* 1. Featured Article Card (rendered when available) */}
             {featuredArticle && currentPage === 1 && !searchQuery && !selectedTopic && (
               <div className="space-y-3">
                 <div className="flex items-center justify-between px-1">
@@ -662,7 +691,7 @@ function CategoriesPageContent() {
                       ? `Articles on #${selectedTopic}`
                       : activeCategory !== "all"
                       ? `${activeCategory.toUpperCase()} Articles`
-                      : "Latest Articles"}
+                      : "All Islamic Knowledge Articles"}
                   </h2>
                   <p className="text-xs text-gray-500 mt-0.5">
                     Showing {currentArticles.length} of {filteredArticles.length} articles
@@ -846,7 +875,7 @@ function CategoriesPageContent() {
               </div>
 
               <div className="divide-y divide-gray-50">
-                {popularTopics.map((topic) => {
+                {dynamicTopics.map((topic) => {
                   const isSelected = selectedTopic.toLowerCase() === topic.name.toLowerCase();
                   return (
                     <button
