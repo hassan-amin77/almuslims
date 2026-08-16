@@ -20,15 +20,133 @@ export interface Article {
   content: string;
   author: string;
   authorImg: string;
+  authorRole?: string;
+  isVerified?: boolean;
   date: string;
   displayDate: string;
   readTime: string;
   image: string;
   color?: string;
   level: "Beginner" | "Intermediate" | "Advanced";
+  isFeatured?: boolean;
+  topics?: string[];
   tableOfContents?: TOCItem[];
   faqs?: FAQItem[];
 }
+
+export interface CategoryInfo {
+  id: string;
+  name: string;
+  slug: string;
+  count: number;
+  description: string;
+  href: string;
+  iconType: "all" | "quran" | "hadith" | "seerah" | "aqeedah" | "fiqh" | "duas" | "names" | "lifestyle" | "general";
+}
+
+export const categoriesMeta: CategoryInfo[] = [
+  {
+    id: "all",
+    name: "All Categories",
+    slug: "all",
+    count: 296,
+    description: "Browse all authentic Islamic knowledge and guides",
+    href: "/categories",
+    iconType: "all"
+  },
+  {
+    id: "quran",
+    name: "Quran",
+    slug: "quran",
+    count: 64,
+    description: "Tafsir, recitation rules, and Surah insights",
+    href: "/holy-quran",
+    iconType: "quran"
+  },
+  {
+    id: "hadith",
+    name: "Hadith",
+    slug: "hadith",
+    count: 48,
+    description: "Prophetic traditions, authentic narrations & explanations",
+    href: "/categories?category=hadith",
+    iconType: "hadith"
+  },
+  {
+    id: "seerah",
+    name: "Seerah",
+    slug: "seerah",
+    count: 32,
+    description: "Life and times of Prophet Muhammad ﷺ",
+    href: "/seerah",
+    iconType: "seerah"
+  },
+  {
+    id: "aqeedah",
+    name: "Aqeedah",
+    slug: "aqeedah",
+    count: 21,
+    description: "Foundations of Islamic creed, Tawheed & theology",
+    href: "/categories?category=aqeedah",
+    iconType: "aqeedah"
+  },
+  {
+    id: "fiqh",
+    name: "Fiqh",
+    slug: "fiqh",
+    count: 42,
+    description: "Islamic jurisprudence, rulings and everyday guidance",
+    href: "/categories?category=fiqh",
+    iconType: "fiqh"
+  },
+  {
+    id: "duas",
+    name: "Duas",
+    slug: "duas",
+    count: 36,
+    description: "Authentic supplications, Adhkar and morning/evening prayers",
+    href: "/dua-collection",
+    iconType: "duas"
+  },
+  {
+    id: "names-of-allah",
+    name: "99 Names",
+    slug: "names-of-allah",
+    count: 99,
+    description: "Discover the Divine Names of Allah & their meanings",
+    href: "/names-of-allah",
+    iconType: "names"
+  },
+  {
+    id: "lifestyle",
+    name: "Lifestyle",
+    slug: "lifestyle",
+    count: 18,
+    description: "Islamic morals, family life, work ethics and wellness",
+    href: "/categories?category=lifestyle",
+    iconType: "lifestyle"
+  },
+  {
+    id: "general",
+    name: "General",
+    slug: "general",
+    count: 15,
+    description: "Articles, reflections, stories and knowledge",
+    href: "/categories?category=general",
+    iconType: "general"
+  }
+];
+
+export const popularTopics = [
+  { name: "Tawheed", count: 28, categoryId: "aqeedah" },
+  { name: "Prayer", count: 24, categoryId: "fiqh" },
+  { name: "Ramadan", count: 20, categoryId: "lifestyle" },
+  { name: "Patience", count: 18, categoryId: "general" },
+  { name: "Family", count: 16, categoryId: "lifestyle" },
+  { name: "Seerah", count: 14, categoryId: "seerah" },
+  { name: "99 Names", count: 99, categoryId: "names-of-allah" },
+  { name: "Duas", count: 36, categoryId: "duas" }
+];
 
 export function getArticleCategoryPath(categoryOrId: string): string {
   const cat = (categoryOrId || '').toLowerCase().trim();
