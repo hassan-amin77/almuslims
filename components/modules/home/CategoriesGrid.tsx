@@ -53,8 +53,8 @@ const categories = [
     )
   },
   {
-    name: "BLOG",
-    href: "/blog",
+    name: "CATEGORIES",
+    href: "/categories",
     desc: "Insightful reads on Islamic topics",
     icon: (
       <svg className="w-14 h-14" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">

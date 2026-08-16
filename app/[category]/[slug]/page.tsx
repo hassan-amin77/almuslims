@@ -22,8 +22,8 @@ export default async function CategoryArticlePage({ params }: PageProps) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-[#FDFCF9] p-6 text-center">
         <p className="text-red-500 font-bold mb-4">Article Not Found</p>
-        <Link href="/blog" className="px-6 py-2 bg-primary text-white rounded-xl shadow-lg">
-          Back to Blog
+        <Link href="/categories" className="px-6 py-2 bg-primary text-white rounded-xl shadow-lg">
+          Back to Categories
         </Link>
       </div>
     );

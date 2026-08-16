@@ -70,10 +70,8 @@ export default function ContactUsPage() {
   ) => {
     const { name, value } = e.target;
     if (name === "name") {
-      // Only allow letters and spaces
       setForm((prev) => ({ ...prev, [name]: value.replace(/[^a-zA-Z\s]/g, "") }));
     } else if (name === "phone") {
-      // Only allow digits
       setForm((prev) => ({ ...prev, [name]: value.replace(/[^0-9]/g, "") }));
     } else {
       setForm((prev) => ({ ...prev, [name]: value }));

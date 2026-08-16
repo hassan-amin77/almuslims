@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      {/* Cards Section Container */}
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 mt-4 md:mt-16 relative z-20 pb-10">
         <div className="bg-white/80 backdrop-blur-md rounded-[2rem] p-4 sm:p-6 lg:p-8 shadow-2xl border border-primary/5">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">

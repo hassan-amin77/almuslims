@@ -44,12 +44,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
-      url: `${baseUrl}/blog`,
-      lastModified: currentDate,
-      changeFrequency: "daily",
-      priority: 0.85,
-    },
-    {
       url: `${baseUrl}/prayer-times`,
       lastModified: currentDate,
       changeFrequency: "daily",

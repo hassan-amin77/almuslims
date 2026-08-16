@@ -37,21 +37,21 @@ const navLinks = [
     icon: <HiOutlineAcademicCap className="w-5 h-5 text-primary" />,
   },
   {
-    title: "Blog",
-    desc: "Islamic articles on a wide range of topics.",
-    link: "/blog",
+    title: "Categories",
+    desc: "Browse authentic Islamic knowledge by category.",
+    link: "/categories",
     icon: <HiOutlineQueueList className="w-5 h-5 text-primary" />,
   },
   {
     title: "Aqeedah",
     desc: "Strengthen your foundational belief in Allah.",
-    link: "/blog?category=aqeedah",
+    link: "/categories?category=aqeedah",
     icon: <HiOutlineSparkles className="w-5 h-5 text-primary" />,
   },
   {
     title: "Fiqh",
     desc: "Islamic rulings for modern-day life.",
-    link: "/blog?category=fiqh",
+    link: "/categories?category=fiqh",
     icon: <HiOutlineScale className="w-5 h-5 text-primary" />,
   },
 ];

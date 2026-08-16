@@ -24,75 +24,29 @@ interface NavItem {
 const navLinks: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Quran", href: "/holy-quran" },
-  { label: "Hadith", href: "/categories?category=hadith" },
+
   { label: "Duas & Azkar", href: "/dua-collection" },
   { label: "Seerah", href: "/seerah" },
-  { label: "Articles", href: "/blog" },
   { label: "Categories", href: "/categories", isDropdown: true },
 ];
 
 const categoryDropdownItems = [
   {
-    name: "All Categories",
-    desc: "Explore full Islamic knowledge hub",
-    href: "/categories",
-    icon: AllCategoriesIcon,
-    bgClass: "bg-emerald-50 text-emerald-900 border-emerald-100",
-    primaryColor: "#0A3A2F",
-    secondaryColor: "#D48C46",
-  },
-  {
-    name: "Holy Quran",
-    desc: "Read, listen & explore Surahs",
-    href: "/holy-quran",
+    name: "Quran",
+    desc: "Tafsir, recitation rules & Quranic articles",
+    href: "/categories?category=quran",
     icon: QuranIcon,
     bgClass: "bg-amber-50 text-amber-900 border-amber-100",
     primaryColor: "#854D0E",
     secondaryColor: "#D48C46",
   },
   {
-    name: "Hadith Collections",
-    desc: "Prophetic traditions & teachings",
-    href: "/categories?category=hadith",
-    icon: HadithIcon,
-    bgClass: "bg-teal-50 text-teal-900 border-teal-100",
-    primaryColor: "#115E59",
-    secondaryColor: "#D48C46",
-  },
-  {
-    name: "Duas & Azkar",
-    desc: "Supplications for daily life",
-    href: "/dua-collection",
+    name: "Dua",
+    desc: "Authentic supplications & daily Adhkar",
+    href: "/categories?category=duas",
     icon: DuasIcon,
     bgClass: "bg-orange-50 text-orange-900 border-orange-100",
     primaryColor: "#9A3412",
-    secondaryColor: "#D48C46",
-  },
-  {
-    name: "Seerah",
-    desc: "Life of Prophet Muhammad ﷺ",
-    href: "/seerah",
-    icon: SeerahIcon,
-    bgClass: "bg-emerald-50 text-emerald-900 border-emerald-100",
-    primaryColor: "#065F46",
-    secondaryColor: "#D48C46",
-  },
-  {
-    name: "99 Names of Allah",
-    desc: "Meanings & spiritual virtues",
-    href: "/names-of-allah",
-    icon: NamesOfAllahIcon,
-    bgClass: "bg-amber-50 text-amber-900 border-amber-100",
-    primaryColor: "#B45309",
-    secondaryColor: "#D48C46",
-  },
-  {
-    name: "Fiqh & Aqeedah",
-    desc: "Rulings & Islamic creed",
-    href: "/categories?category=fiqh",
-    icon: FiqhIcon,
-    bgClass: "bg-stone-100 text-stone-900 border-stone-200",
-    primaryColor: "#44403C",
     secondaryColor: "#D48C46",
   },
 ];
@@ -261,12 +215,7 @@ export default function Navbar() {
             >
               <FaSearch className="text-sm" />
             </button>
-            <Link
-              href="/categories"
-              className="px-4 py-2 bg-primary text-white text-xs font-bold rounded-full hover:bg-primaryHover transition-colors shadow-xs"
-            >
-              Explore Hub
-            </Link>
+            
           </div>
           
           {/* Mobile Actions and Hamburger */}

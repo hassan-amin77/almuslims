@@ -13,6 +13,8 @@ const featuredArticle = sortedArticles[0];
 const sideArticles = sortedArticles.slice(1, 4);
 
 export default function FeaturedArticles() {
+  if (sortedArticles.length === 0) return null;
+
   return (
     <section className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 py-10 mb-10">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0 mb-8">
@@ -23,7 +25,7 @@ export default function FeaturedArticles() {
           <div className="h-1 w-12 bg-secondary mt-2 rounded-full" />
         </div>
         <Link 
-          href="/blog" 
+          href="/categories" 
           className="px-5 py-2.5 bg-white border border-[#EBE3D5] text-[#0A3A2F] hover:bg-[#0A3A2F] hover:text-white hover:border-[#0A3A2F] font-bold text-[10px] tracking-widest uppercase rounded-full shadow-sm flex items-center gap-2 group transition-all duration-300"
         >
           View all articles
