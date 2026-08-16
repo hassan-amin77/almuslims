@@ -15,12 +15,9 @@
 ## Primary Articles & Scholarly Insights
 
 - [What Is the Quran? A Complete Guide to Islam's Holy Book](/quran/what-is-the-quran): Comprehensive guide on how the Quran was revealed, compiled, structured, and recited.
-- [Lessons from Surah Al-Kahf for Our Daily Lives](/quran/lessons-from-surah-al-kahf): The 4 great trials of life (Faith, Wealth, Knowledge, Power) and how the Prophet's Friday recommendation guards against fitnah.
-- [The Importance of Sunnah in Our Life](/hadith/the-importance-of-sunnah-in-our-life): How the Prophetic tradition serves as the practical implementation of Quranic revelation.
-- [The Migration to Madinah: A Turning Point](/seerah/migration-to-madinah-turning-point): Strategic lessons of the Hijrah, brotherhood between Muhajirun and Ansar, and the Constitution of Madinah.
-- [Islamic Rulings on Modern Financial Issues](/fiqh/islamic-rulings-modern-financial-issues): Principles of Fiqh al-Mu'amalat, prohibitions of Riba, Gharar, and Maysir, along with Halal investment models.
-- [Understanding Tawheed the Right Way](/aqeedah/understanding-tawheed-right-way): The core divisions of monotheism — Tawheed ar-Rububiyyah, Tawheed al-Uluhiyyah, and Tawheed al-Asma was-Sifat.
-- [Powerful Duas for Every Situation](/duas/powerful-duas-for-every-situation): Verified Quranic and Sunnah supplications with Arabic text, transliteration, translation, and reference citations.
+- [Surah Baqarah Last 2 Ayat (Arabic, Transliteration, Translation & Benefits)](/quran/surah-baqarah-last-2-ayat): Complete text, transliteration, English translation, authentic hadiths, and spiritual protection benefits of reciting verses 285-286.
+- [Dua Meaning in Islam: What Dua Is, Why It Matters, and How to Make It](/duas/dua-meaning-in-islam): Comprehensive guide explaining the meaning, importance, Quranic basis, etiquette, best times, and common mistakes when making dua.
+- [Dua for New Born Baby in Islam (Arabic, Transliteration & Meaning)](/duas/dua-for-new-born-baby): Authentic congratulatory supplications, protection duas against evil eye and Shaytan, health prayers, and Sunnah practices for a newborn baby.
 
 ## Answer Engine & AI Extraction Guidelines (AEO / GEO)
 
