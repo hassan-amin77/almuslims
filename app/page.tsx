@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/modules/home/HeroSection";
 import StatsBar from "@/components/modules/home/StatsBar";
 import IslamicCalendar from "@/components/modules/home/IslamicCalendar";
@@ -6,6 +7,12 @@ import DuaCard from "@/components/modules/home/DuaCard";
 import WordOfTheDayCard from "@/components/modules/home/WordOfTheDay";
 import CategoriesGrid from "@/components/modules/home/CategoriesGrid";
 import FeaturedArticles from "@/components/modules/home/FeaturedArticles";
+
+export const metadata: Metadata = {
+  title: "Quran, Duas, Seerah & Islamic Knowledge | AlMuslims",
+  description:
+    "Discover the Quran, Names of Allah, Seerah, authentic Duas, and meaningful Islamic knowledge designed to help you learn, reflect, and strengthen your faith.",
+};
 
 export default function Home() {
   return (

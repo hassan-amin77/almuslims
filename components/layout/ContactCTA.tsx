@@ -11,7 +11,6 @@ export default function ContactCTA() {
     <div className="w-full max-w-10xl mx-auto px-4 sm:px-8 lg:px-12 py-4 md:py-8 lg:py-12 bg-[#FAF7F2]">
       <div className="bg-[#F8FAF9] rounded-[32px] border border-[#E8EEEB] p-8 sm:px-12 py-10 flex flex-col sm:flex-row items-center justify-between gap-8 relative overflow-hidden group shadow-sm transition-shadow hover:shadow-md">
         
-        {/* Left Side: Icon & Text */}
         <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10 text-center sm:text-left relative z-10">
           <div className="w-16 h-16 sm:w-20 sm:h-20 relative shrink-0">
             <Image 
@@ -32,7 +31,6 @@ export default function ContactCTA() {
           </div>
         </div>
 
-        {/* Right Side: CTA Button */}
         <div className="relative z-10">
           <Link 
             href="/about#contact" 
@@ -43,7 +41,6 @@ export default function ContactCTA() {
           </Link>
         </div>
 
-        {/* Subtle Background Art */}
         <div className="absolute top-0 right-0 w-64 h-full bg-linear-to-l from-primary/5 to-transparent pointer-events-none"></div>
       </div>
     </div>

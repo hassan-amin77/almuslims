@@ -175,7 +175,7 @@ export const articles: Article[] = [
     content: `
       <p>Dua is one of the most meaningful acts of worship in Islam. It gives Muslims a direct connection with Allah, allowing them to seek guidance, forgiveness, mercy, protection, and blessings in every part of life. Whether a person is facing difficulties, making an important decision, or expressing gratitude, dua provides an opportunity to turn to Allah with sincerity and trust.</p>
       <p>Unlike many forms of worship that have specific times and requirements, dua can be made anywhere and at any time. It reminds believers that Allah is always near and aware of their needs. Through regular supplication, Muslims strengthen their faith, develop patience, and build a deeper relationship with their Creator.</p>
-      <p>In this guide, you will learn the meaning of dua in Islam, its importance in the Quran and Sunnah, how to make dua correctly, and the best practices that can help make your supplications more meaningful and effective. Additionally, this guide includes a collection of authentic duas from the Quran and Sunnah with Arabic text, transliteration, and meanings to help you read, understand, remember, and practice them with confidence.</p>
+      <p>In this guide, you will learn the meaning of dua in Islam, its importance in the Quran and Sunnah, how to make dua correctly, and the best practices that can help make your supplications more meaningful and effective. Additionally, this guide includes a <b><a href="/dua-collection/">collection of authentic duas</a></b> from the Quran and Sunnah with Arabic text, transliteration, and meanings to help you read, understand, remember, and practice them with confidence.</p>
 
       <h2 id="meaning-of-dua">Understanding the Meaning of Dua</h2>
 
@@ -639,7 +639,7 @@ export const articles: Article[] = [
       <p>This verse is often remembered by parents who wish to place their daughters under Allah's protection from an early age.</p>
 
       <h2 id="conclusion">Conclusion</h2>
-      <p>Making dua for a new born baby is one of the most beautiful ways to thank Allah for the gift of a child. Through sincere supplication, parents and loved ones ask Allah to bless the newborn with good health, strong faith, protection, and a righteous future. In this guide, we explored a collection of duas, including the dua for a newborn baby, dua to congratulate parents on a new baby, dua for newborn protection, dua for baby health, dua for a baby boy, dua for a baby girl, and Quranic supplications for righteous offspring. Islam also encourages following Sunnah practices such as Tahneek, Aqeeqah, and choosing a good name. Most importantly, dua should continue throughout a child's life. By regularly praying for their children, parents place them under Allah's care and seek blessings, guidance, and success for them in this world and the Hereafter. Ameen.</p>
+      <p>Making dua for a new born baby is one of the most beautiful ways to thank Allah for the gift of a child. Through sincere supplication, parents and loved ones ask Allah to bless the newborn with good health, strong faith, protection, and a righteous future. In this guide, we explored a <b><a href="/dua-collection/">collection of duas</a></b>, including the dua for a newborn baby, dua to congratulate parents on a new baby, dua for newborn protection, dua for baby health, dua for a baby boy, dua for a baby girl, and Quranic supplications for righteous offspring. Islam also encourages following Sunnah practices such as Tahneek, Aqeeqah, and choosing a good name. Most importantly, dua should continue throughout a child's life. By regularly praying for their children, parents place them under Allah's care and seek blessings, guidance, and success for them in this world and the Hereafter. Ameen.</p>
     `,
     author: "AlMuslims Editorial Team",
     authorImg: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200",
@@ -701,7 +701,7 @@ export const articles: Article[] = [
     content: `
       <p>The last two verses of Surah Al-Baqarah (Ayat 285-286) are among the most beloved and frequently recited verses of the Quran. Millions of Muslims recite them every night because of their profound meanings, spiritual protection, and immense rewards mentioned in authentic hadith.</p>
       <p>These verses summarize essential Islamic beliefs, including faith in Allah, His angels, His books, His messengers, personal accountability, repentance, mercy, and reliance upon Allah. They also contain a powerful supplication asking Allah for forgiveness, mercy, and victory.</p>
-      <p>Whether you are looking for the Arabic text, transliteration, English translation, benefits, or authentic hadith about the last two ayat of Surah Baqarah, this guide provides everything in one place.</p>
+      <p>Whether you are looking for the Arabic text, transliteration, English translation, benefits, or authentic hadith about the last two ayat of <b><a href="/holy-quran/">Surah Baqarah</a></b>, this guide provides everything in one place.</p>
 
       <h2 id="quick-answer">Quick Answer</h2>
       <p>The last two ayat of Surah Al-Baqarah are verses 285 and 286 of the Quran. They emphasize faith, obedience to Allah, forgiveness, mercy, and reliance on Allah's help.</p>
@@ -953,12 +953,14 @@ export const articles: Article[] = [
       </ul>
 
       <h2 id="how-preserved">How Was the Quran Preserved?</h2>
+      <img src="/blogs/Quran/what-is-quran/how-quran-preserved.webp" alt="Quran-preserved" />
       <p>Islamic scholarship identifies two parallel preservation methods.</p>
       <p><strong>Oral transmission:</strong> Large numbers of Muhammad's (Sallallahu alaihi wasallam) companions memorized portions some the entire text during his lifetime. This practice of memorization (hifz) has continued unbroken; millions of hafiz worldwide today serve as a continuing verification against textual alteration.</p>
       <p><strong>Written transmission:</strong> The Abu Bakr compilation, followed by the Uthmanic standardization, established a single fixed reference. Early manuscript evidence supports early textual stability: the Birmingham manuscript, for example, has been radiocarbon-dated to within decades of Muhammad's (Sallallahu alaihi wasallam) life, though academic discussion continues regarding dating methodology and minor regional recitation variants (qira'at).</p>
       <p>Muslims also cite a theological guarantee of preservation. Quran 15:9 states that God Himself preserves the text, a concept often referenced through the term Lawh al-Mahfuz, "the Preserved Tablet."</p>
 
       <h2 id="how-structured">How Is the Quran Structured?</h2>
+      <img src="/blogs/Quran/what-is-quran/how-is-the-quran-structured.webp" alt="Quran-structured" />
       <h3>Surahs (Chapters)</h3>
       <p>The Quran contains 114 surahs, arranged primarily by length rather than by the order of revelation. Every surah except one (At-Tawbah) opens with the phrase "In the name of God, the Most Gracious, the Most Merciful."</p>
       <div class="overflow-x-auto my-6 rounded-2xl border border-gray-200 shadow-sm bg-white">
@@ -1067,6 +1069,7 @@ export const articles: Article[] = [
       <p>Muslims treat the Quran as the primary source of guidance and the Sunnah as the essential framework for interpreting and applying it.</p>
 
       <h2 id="how-used-today">How Muslims Use the Quran Today</h2>
+      <img src="/blogs/Quran/what-is-quran/how-muslims-use-the-quran-today.webp" alt="Quran-structured" />
       <p>The Quran is embedded in daily and seasonal religious practice through specific, structured routines:</p>
       <p><strong>Daily prayer (salah):</strong> Surah Al-Fatiha is recited in every unit (rakah) of each of the five daily prayers, making it one of the most frequently recited passages in the world.</p>
       <p><strong>Ramadan:</strong> Many mosques conduct nightly taraweeh prayers during Ramadan, reciting one juz per night so the congregation completes the full Quran (khatm) by the month's end.</p>
@@ -1080,7 +1083,7 @@ export const articles: Article[] = [
       </div>
 
       <h2 id="recitation-and-study">Recitation and Study</h2>
-      <p>Several disciplines govern how the Holy Quran is read and interpreted:</p>
+      <p>Several disciplines govern how the <b><a href="/holy-quran/">Holy Quran</a></b> is read and interpreted:</p>
       <ul>
         <li><strong>Tajwid:</strong> The rules of correct pronunciation and articulation during recitation</li>
         <li><strong>Tarteel:</strong> Slow, deliberate recitation, distinct from rapid reading</li>
@@ -1132,6 +1135,7 @@ export const articles: Article[] = [
       <p>Two factors matter more than raw memorization speed. The first is muraja'ah (revision) memorizing the text once is not the same as retaining it permanently, and hafiz typically continue structured review for years, sometimes for life, to prevent forgetting. The second is prior fluency in reading Arabic script (even without full comprehension); students who can already read Quranic Arabic accurately tend to memorize substantially faster than those learning the script and the text simultaneously.</p>
 
       <h2 id="influence-civilization">How the Quran Influenced Civilization</h2>
+      <img src="/blogs/Quran/what-is-quran/how-the-quran-influenced-civilization.webp" alt="Quran-influenced-civilization" />
       <p>The Quran's influence extends well beyond religious practice, shaping several fields across the history of the Islamic world.</p>
 
       <p><strong>1. Arabic language:</strong> The Quran functions as the linguistic benchmark for Classical Arabic; its grammar, vocabulary, and style became the standard against which formal Arabic has been measured for over a millennium, contributing directly to the spread and standardization of the language across a geographically vast and linguistically diverse region.</p>

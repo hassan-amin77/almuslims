@@ -350,7 +350,6 @@ function CategoriesPageContent() {
         </div>
 
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Breadcrumbs */}
           <nav className="flex items-center gap-2 text-xs font-semibold text-gray-500 mb-3">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
             <span className="text-gray-300">›</span>
@@ -363,7 +362,6 @@ function CategoriesPageContent() {
             )}
           </nav>
 
-          {/* Heading and Subtitle */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <div className="max-w-2xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-primary tracking-tight leading-tight">
@@ -377,7 +375,6 @@ function CategoriesPageContent() {
         </div>
       </section>
 
-      {/* ─── Category Selection Cards (Featured Streams) ─── */}
       <section className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 mt-6">
         <div className="flex items-center justify-between gap-2 mb-3 px-1">
           <span className="text-xs font-bold uppercase tracking-wider text-gray-400">Featured Streams</span>
@@ -390,7 +387,6 @@ function CategoriesPageContent() {
           </button>
         </div>
 
-        {/* Scrollable Category Row: Quran, Duas, and 99 Names */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
           {dynamicCategories
             .filter((cat) => ["quran", "duas", "names-of-allah"].includes(cat.id.toLowerCase()))
@@ -440,7 +436,6 @@ function CategoriesPageContent() {
         </div>
       </section>
 
-      {/* ─── Search Bar ─── */}
       <section className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 mt-5">
         <div className="bg-white rounded-2xl p-3 sm:p-4 border border-gray-100 shadow-sm">
           <div className="relative">
@@ -468,25 +463,18 @@ function CategoriesPageContent() {
         </div>
       </section>
 
-      {/* ─── Main 2-Column Section: Articles & Sidebar ─── */}
       <div ref={articleSectionRef} className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-          {/* ════════════ Left Column: Featured + Article Grid (8 Cols) ════════════ */}
           <div className="lg:col-span-8 space-y-8">
-
-            {/* 1. Featured Article Card (rendered when available) */}
             {featuredArticle && currentPage === 1 && !searchQuery && !selectedTopic && (
               <div className="space-y-3">
                 <div className="flex items-center justify-between px-1">
                   <h2 className="text-lg font-heading font-bold text-gray-900">Featured Article</h2>
                   <span className="text-xs text-secondary font-bold tracking-widest uppercase">Editor's Pick</span>
                 </div>
-
                 <div className="bg-white rounded-3xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
                   <div className="grid grid-cols-1 md:grid-cols-12 items-stretch">
-
-                    {/* Featured Image */}
                     <div className="md:col-span-6 relative min-h-[260px] md:min-h-[340px] bg-gray-100 overflow-hidden">
                       <Image
                         src={featuredArticle.image}
@@ -501,8 +489,6 @@ function CategoriesPageContent() {
                         FEATURED
                       </span>
                     </div>
-
-                    {/* Featured Content */}
                     <div className="md:col-span-6 p-6 sm:p-8 flex flex-col justify-between">
                       <div>
                         <div className="flex items-center justify-between gap-2 mb-2.5">
@@ -577,8 +563,6 @@ function CategoriesPageContent() {
                 </div>
               </div>
             )}
-
-            {/* 2. Articles Grid */}
             <div className="space-y-4">
               <div className="flex items-center justify-between px-1">
                 <div>

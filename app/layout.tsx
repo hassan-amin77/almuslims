@@ -14,11 +14,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://almuslims.com"),
   title: {
-    default: "AlMuslims — Authentic Islamic Knowledge",
-    template: "%s | AlMuslims",
+    default: "Quran, Duas, Seerah & Islamic Knowledge | AlMuslims",
+    template: "%s",
   },
   description:
-    "Explore authentic Islamic knowledge on the Holy Quran, Hadith, Duas & Azkar, Seerah of Prophet Muhammad ﷺ, 99 Names of Allah, Fiqh, and Aqeedah.",
+    "Discover the Quran, Names of Allah, Seerah, authentic Duas, and meaningful Islamic knowledge designed to help you learn, reflect, and strengthen your faith.",
   applicationName: "AlMuslims",
   authors: [{ name: "AlMuslims Scholars & Research Team" }],
   generator: "Next.js",
@@ -54,23 +54,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://almuslims.com",
     siteName: "AlMuslims",
-    title: "AlMuslims — Authentic Islamic Knowledge",
+    title: "Quran, Duas, Seerah & Islamic Knowledge | AlMuslims",
     description:
-      "Explore authentic Islamic knowledge on the Holy Quran, Hadith, Duas & Azkar, Seerah, 99 Names of Allah, and Fiqh.",
+      "Discover the Quran, Names of Allah, Seerah, authentic Duas, and meaningful Islamic knowledge designed to help you learn, reflect, and strengthen your faith.",
     images: [
       {
         url: "/logo.png",
         width: 800,
         height: 600,
-        alt: "AlMuslims - Authentic Islamic Knowledge",
+        alt: "AlMuslims - Quran, Duas, Seerah & Islamic Knowledge",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AlMuslims — Authentic Islamic Knowledge",
+    title: "Quran, Duas, Seerah & Islamic Knowledge | AlMuslims",
     description:
-      "Explore authentic Islamic knowledge on the Holy Quran, Hadith, Duas & Azkar, Seerah, 99 Names of Allah, and Fiqh.",
+      "Discover the Quran, Names of Allah, Seerah, authentic Duas, and meaningful Islamic knowledge designed to help you learn, reflect, and strengthen your faith.",
     images: ["/logo.png"],
     creator: "@officialalmuslims",
   },

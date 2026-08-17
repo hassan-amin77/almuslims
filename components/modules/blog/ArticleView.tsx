@@ -109,7 +109,7 @@ export default function ArticleView({ article }: ArticleViewProps) {
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <HiChevronRight className="text-white/40 shrink-0" />
             <Link
-              href={article.categoryId === "quran" ? "/holy-quran" : `/${article.categoryId}`}
+              href={`/categories?category=${article.categoryId || article.category.toLowerCase().replace(/\s+/g, "-")}`}
               className="hover:text-white transition-colors"
             >
               {article.category}

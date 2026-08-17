@@ -23,11 +23,11 @@ export default function AnnouncementBar() {
       <div className="font-medium animate-fade-in transition-all duration-500 text-center md:text-left">
         ✨ {quranicVerses[currentIndex]}
       </div>
-      <div className="flex items-center gap-6">
+      <div className="hidden md:flex items-center gap-6">
         <div className="flex gap-4 font-semibold">
           <Link href="/about" className="hover:underline">About Us</Link>
         </div>
-        </div>
+      </div>
     </div>
   );
 }

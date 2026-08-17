@@ -7,7 +7,6 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#063327] text-white mt-auto border-t border-white/5 relative overflow-hidden font-body">
 
-      {/* Background Mosque Silhouette (Optional decorative touch) */}
       <div className="absolute bottom-0 right-0 opacity-10 pointer-events-none">
         <svg width="400" height="150" viewBox="0 0 400 150" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M350 150V80C350 60 330 50 330 50C330 50 310 60 310 80V150H350Z" fill="currentColor" />
@@ -21,7 +20,6 @@ export default function Footer() {
 
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-8 relative z-10">
 
-        {/* Column 1: Logo, Description & Socials */}
         <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-2 space-y-6 lg:pr-4">
           <Link href="/" className="flex flex-col items-start gap-2 group w-fit">
             <div className="shadow-sm overflow-hidden rounded-lg ">
@@ -37,11 +35,10 @@ export default function Footer() {
             </div>
           </Link>
           <p className="text-sm text-white/70 leading-relaxed font-light">
-            Your trusted source for authentic Islamic knowledge. Learn, reflect, and grow — for the sake of Allah.
+            Authentic Islamic knowledge to learn, reflect, and live by.
           </p>
         </div>
 
-        {/* Column 2: Quick Links */}
         <div>
           <span className="block text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Quick Links</span>
           <ul className="space-y-5 text-[14px] text-white/80">
@@ -51,7 +48,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 3: Categories */}
         <div>
           <span className="block text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Categories</span>
           <ul className="space-y-4 text-[14px] text-white/80">
@@ -64,7 +60,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 4: Resources */}
         <div>
           <span className="block text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Resources</span>
           <ul className="space-y-5 text-[14px] text-white/80">
@@ -74,7 +69,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 5: Get In Touch */}
         <div>
           <span className="block text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Get In Touch</span>
           <div className="space-y-4 text-[14px] text-white/80">
@@ -89,7 +83,6 @@ export default function Footer() {
 
       </div>
 
-      {/* Copyright Bar */}
       <div className="w-full bg-[#04281E] py-5 border-t border-white/5 relative z-10">
         <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 text-[13px] text-white/50 flex flex-col md:flex-row text-center justify-center items-center gap-4">
           <p>© {new Date().getFullYear()} AlMuslims.com - All rights reserved.</p>

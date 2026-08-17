@@ -1,22 +1,20 @@
-"use client"; // Animations aur interactive elements ke liye client component zaroori ha
+"use client"; 
 
 import React from "react";
-import Image from "next/image"; // Next.js Optimized Image component
+import Image from "next/image"; 
 import Link from "next/link";
-import { motion } from "framer-motion"; // Animation library
+import { motion } from "framer-motion"; 
 
 export default function HeroSection() {
   return (
     <section className="relative w-full md:min-h-[80vh] flex items-center bg-background px-4 sm:px-6 lg:px-8 pt-6 pb-2 md:py-20 overflow-hidden">
       
-      {/* Main Two-column Responsive Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full z-10">
         
-        {/* Left Column: Text & Buttons (Animated) */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }} // Shuru me invisible aur 30px neeche
-          animate={{ opacity: 1, y: 0 }}  // Load hone par visible aur apni jagah par
-          transition={{ duration: 0.6 }}   // 0.6 seconds ka animation time
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           className="space-y-6 text-center lg:text-left"
         >
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-primary leading-tight">
@@ -25,19 +23,16 @@ export default function HeroSection() {
           </h1>
           
           <p className="font-body text-base sm:text-lg text-primary/80 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-            Explore verified Quranic verses, authentic Hadith books, and accurate prayer timings. Your modern companion for a spiritual journey.
+            Learn Islam with confidence through carefully researched Quranic guidance, Duas, Seerah, and practical Islamic insights.
           </p>
 
-          {/* CTA Buttons Group */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-            {/* Filled Green Button */}
             <Link 
               href="/about" 
               className="px-8 py-3.5 bg-primary text-white font-body font-semibold rounded-md shadow-md hover:bg-primaryHover transition-all text-center"
             >
               Explore Resources
             </Link>
-            {/* White with Orange/Secondary Border Button */}
             <Link 
               href="/holy-quran" 
               className="px-8 py-3.5 bg-white text-secondary border-2 border-secondary font-body font-semibold rounded-md hover:bg-secondary/5 transition-all text-center"
@@ -47,7 +42,6 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Right Column: Optimized Kaaba Image */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -66,7 +60,6 @@ export default function HeroSection() {
 
       </div>
 
-      {/* Decorative Background Element */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 rounded-l-full blur-3xl -z-10 hidden lg:block" />
     </section>
   );
