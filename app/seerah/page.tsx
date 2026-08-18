@@ -497,9 +497,7 @@ export default function SeerahPage() {
         </div>
       </section>
 
-      {/* ─── Main Content ─── */}
       <section className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 pb-20">
-        {/* Timeline cards grid */}
         <div className="lg:col-span-8">
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -517,9 +515,7 @@ export default function SeerahPage() {
           )}
         </div>
 
-        {/* Sticky Sidebar */}
         <div className="lg:col-span-4 space-y-6 h-fit lg:sticky lg:top-28">
-          {/* Quranic reminder card */}
           <div className="relative rounded-3xl overflow-hidden min-h-[280px] bg-[#0A3A2F] dark:bg-[#071A14] flex items-center justify-center p-8 text-center">
             <div
               className="absolute inset-0 bg-cover bg-center opacity-15"

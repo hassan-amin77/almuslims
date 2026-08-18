@@ -675,19 +675,15 @@ function CategoriesPageContent() {
 
           </div>
 
-          {/* ════════════ Right Column: Sidebar (4 Cols) ════════════ */}
           <div className="lg:col-span-4 space-y-6">
 
-            {/* Widget 1: Daily Reminder (Dark Emerald Aesthetic) */}
             <div className="relative overflow-hidden bg-linear-to-br from-[#063327] via-[#0A3A2F] to-[#04241B] rounded-3xl p-6 text-white shadow-lg border border-emerald-800/40">
-              {/* Glowing lantern visual highlight */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/15 rounded-full blur-2xl pointer-events-none" />
 
               <div className="flex items-center justify-between mb-4">
                 <span className="text-[10px] font-bold tracking-widest text-secondary uppercase bg-white/10 px-2.5 py-1 rounded-full">
                   Daily Reminder
                 </span>
-                <span className="text-amber-400 text-sm">✨</span>
               </div>
 
               <div className="my-6 text-center py-2">
