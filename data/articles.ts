@@ -1167,9 +1167,10 @@ export const articles: Article[] = [
     date: "2026-08-17",
     displayDate: "August 17, 2026",
     readTime: "15 min read",
-    image: "",
+    image: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=800",
     level: "Beginner",
     isFeatured: true,
+    topics: ["Quran", "Revelation", "Islam", "Mushaf", "Tafsir"],
     tableOfContents: [
       { title: "Quick Facts", id: "quick-facts" },
       { title: "Revelation Timeline (610–632 CE)", id: "revelation-timeline" },

@@ -154,9 +154,8 @@ export default function ArticleView({ article }: ArticleViewProps) {
                           onClick={() => toggleFaq(index)}
                           className="w-full text-left p-5 flex items-center justify-between gap-4 hover:text-primary transition-colors"
                         >
-                          <h3 className="flex items-start gap-3 font-bold text-gray-900 text-base sm:text-lg m-0">
-                            <span className="text-primary font-serif font-bold text-lg shrink-0">Q.</span>
-                            <span>{faq.q}</span>
+                          <h3 className="font-bold text-gray-900 text-base sm:text-lg m-0">
+                            {faq.q}
                           </h3>
                           {isOpen ? (
                             <HiChevronUp className="text-primary text-xl shrink-0" />

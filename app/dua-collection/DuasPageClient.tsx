@@ -1,12 +1,12 @@
 
 "use client";
 
-import React, { useState, useMemo, useRef, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import {
-  HiSearch, HiBookmark, HiHeart, HiVolumeUp,
-  HiChevronRight, HiChevronDown,
-  HiOutlineBookmark, HiOutlineHeart, HiOutlineVolumeUp
+  HiSearch, HiHeart,
+  HiChevronRight,
+  HiOutlineHeart
 } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -212,24 +212,7 @@ const allDuas: Dua[] = [
 export default function DuasPageClient() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortBy, setSortBy] = useState("Most Popular");
-  const [isSortOpen, setIsSortOpen] = useState(false);
-  const sortRef = useRef<HTMLDivElement>(null);
-
-  const [bookmarked, setBookmarked] = useState<number[]>([]);
   const [liked, setLiked] = useState<number[]>([]);
-
-  const sortOptions = ["Most Popular", "Recently Added", "Alphabetic"];
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (sortRef.current && !sortRef.current.contains(event.target as Node)) {
-        setIsSortOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   const filteredDuas = useMemo(() => {
     return allDuas.filter((dua) => {
@@ -240,10 +223,6 @@ export default function DuasPageClient() {
       return matchCategory && matchSearch;
     });
   }, [activeCategory, searchQuery]);
-
-  const toggleBookmark = (id: number) => {
-    setBookmarked(prev => prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]);
-  };
 
   const toggleLike = (id: number) => {
     setLiked(prev => prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]);
@@ -319,62 +298,22 @@ export default function DuasPageClient() {
           <main className="col-span-12 lg:col-span-9 space-y-8">
 
 
-            {/* Search & Sort Bar (Premium Redesign) */}
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <div className="relative flex-1 w-full group">
-                <HiSearch className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 text-xl group-focus-within:text-primary transition-colors" />
-                <input
-                  type="text"
-                  placeholder="Search by title, meaning or keyword..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-14 pr-6 py-4 bg-white rounded-3xl border border-gray-100 focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary transition-all shadow-sm text-sm font-medium"
-                />
-              </div>
-
-              {/* Custom Premium Dropdown */}
-              <div className="relative w-full sm:w-60" ref={sortRef}>
-                <button
-                  onClick={() => setIsSortOpen(!isSortOpen)}
-                  className="w-full px-6 py-4 bg-white rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between text-sm font-bold text-gray-900 hover:border-primary transition-all"
-                >
-                  <span className="truncate">{sortBy}</span>
-                  <HiChevronDown className={`text-xl transition-transform duration-300 ${isSortOpen ? "rotate-180" : ""}`} />
-                </button>
-
-                <AnimatePresence>
-                  {isSortOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full right-0 mt-2 w-full bg-white rounded-[24px] border border-gray-100 shadow-2xl z-50 overflow-hidden"
-                    >
-                      {sortOptions.map((option) => (
-                        <button
-                          key={option}
-                          onClick={() => {
-                            setSortBy(option);
-                            setIsSortOpen(false);
-                          }}
-                          className={`w-full px-6 py-4 text-left text-sm font-semibold transition-colors flex items-center justify-between ${sortBy === option ? "bg-primary/5 text-primary" : "text-gray-600 hover:bg-gray-50"
-                            }`}
-                        >
-                          {option}
-                          {sortBy === option && <div className="w-1.5 h-1.5 rounded-full bg-primary" />}
-                        </button>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+            {/* Search Bar */}
+            <div className="relative w-full group">
+              <HiSearch className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 text-xl group-focus-within:text-primary transition-colors" />
+              <input
+                type="text"
+                placeholder="Search by title, meaning or keyword..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-14 pr-6 py-4 bg-white rounded-3xl border border-gray-100 focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary transition-all shadow-sm text-sm font-medium"
+              />
             </div>
 
             {/* Dua Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               <AnimatePresence mode="popLayout">
                 {filteredDuas.map((dua) => {
-                  const isBookmarked = bookmarked.includes(dua.id);
                   const isLiked = liked.includes(dua.id);
 
                   return (
@@ -400,8 +339,6 @@ export default function DuasPageClient() {
                         </div>
                       </span>
                       <div className="flex items-center gap-8 pt-8 border-t border-gray-50 w-full justify-center">
-                        <button className="text-gray-400 hover:text-primary transition-all"><HiOutlineVolumeUp className="text-2xl" /></button>
-
                         <button
                           onClick={() => toggleLike(dua.id)}
                           className={`transition-all ${isLiked ? "text-rose-500" : "text-gray-400 hover:text-rose-500"}`}

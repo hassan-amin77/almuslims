@@ -8,8 +8,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   FaSearch,
   FaFilter,
-  FaBookmark,
-  FaRegBookmark,
   FaCheckCircle,
   FaChevronDown,
   FaChevronLeft,
@@ -118,7 +116,6 @@ function CategoriesPageContent() {
   const [selectedLevel, setSelectedLevel] = useState("all");
   const [sortBy, setSortBy] = useState("latest");
   const [currentPage, setCurrentPage] = useState(1);
-  const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [showFilterDrawer, setShowFilterDrawer] = useState(false);
   const [footerEmail, setFooterEmail] = useState("");
@@ -161,37 +158,6 @@ function CategoriesPageContent() {
       setCurrentPage(1);
     }
   }, [searchParams]);
-
-  // Load saved bookmarks from localStorage
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem("almuslims_bookmarks");
-      if (saved) {
-        setBookmarkedIds(JSON.parse(saved));
-      }
-    } catch {
-      // ignore
-    }
-  }, []);
-
-  const toggleBookmark = (id: string, e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    let updated: string[];
-    if (bookmarkedIds.includes(id)) {
-      updated = bookmarkedIds.filter((item) => item !== id);
-      showToast("Removed from saved bookmarks");
-    } else {
-      updated = [...bookmarkedIds, id];
-      showToast("Saved to your bookmarks");
-    }
-    setBookmarkedIds(updated);
-    try {
-      localStorage.setItem("almuslims_bookmarks", JSON.stringify(updated));
-    } catch {
-      // ignore
-    }
-  };
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
@@ -530,18 +496,6 @@ function CategoriesPageContent() {
                         </div>
 
                         <div className="flex items-center gap-2">
-                          <button
-                            type="button"
-                            onClick={(e) => toggleBookmark(featuredArticle.id, e)}
-                            className="p-2 rounded-full hover:bg-gray-100 text-gray-400 hover:text-secondary transition-colors cursor-pointer"
-                            aria-label="Bookmark"
-                          >
-                            {bookmarkedIds.includes(featuredArticle.id) ? (
-                              <FaBookmark className="text-secondary text-sm" />
-                            ) : (
-                              <FaRegBookmark className="text-sm" />
-                            )}
-                          </button>
                           <Link
                             href={getArticleUrl(featuredArticle)}
                             className="px-4 py-1.5 bg-primary text-white text-xs font-bold rounded-full hover:bg-primaryHover transition-colors"
@@ -607,7 +561,6 @@ function CategoriesPageContent() {
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {currentArticles.map((article) => {
-                    const isSaved = bookmarkedIds.includes(article.id);
                     return (
                       <div
                         key={article.id}
@@ -628,20 +581,6 @@ function CategoriesPageContent() {
                           <span className="absolute top-3 left-3 bg-[#0A3A2F]/90 backdrop-blur-xs text-white text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
                             {article.category}
                           </span>
-
-                          {/* Bookmark Button */}
-                          <button
-                            type="button"
-                            onClick={(e) => toggleBookmark(article.id, e)}
-                            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center text-gray-500 hover:text-secondary shadow-sm hover:scale-110 transition-all cursor-pointer"
-                            aria-label="Save Article"
-                          >
-                            {isSaved ? (
-                              <FaBookmark className="text-secondary text-xs" />
-                            ) : (
-                              <FaRegBookmark className="text-xs" />
-                            )}
-                          </button>
                         </div>
 
                         {/* Body */}

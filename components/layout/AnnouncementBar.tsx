@@ -21,7 +21,7 @@ export default function AnnouncementBar() {
     <div className="w-full bg-secondary text-primary py-2 px-6 font-body text-xs md:text-sm flex flex-col md:flex-row justify-between items-center gap-2 shadow-sm">
       
       <div className="font-medium animate-fade-in transition-all duration-500 text-center md:text-left">
-        ✨ {quranicVerses[currentIndex]}
+        {quranicVerses[currentIndex]}
       </div>
       <div className="hidden md:flex items-center gap-6">
         <div className="flex gap-4 font-semibold">

@@ -25,20 +25,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.jpeg",
   },
-  keywords: [
-    "Quran",
-    "Hadith",
-    "Islamic Knowledge",
-    "Duas and Azkar",
-    "Seerah",
-    "99 Names of Allah",
-    "Fiqh",
-    "Aqeedah",
-    "Tafsir",
-    "Prayer Times",
-    "Islamic Articles",
-    "AlMuslims",
-  ],
   creator: "AlMuslims",
   publisher: "AlMuslims",
   robots: {

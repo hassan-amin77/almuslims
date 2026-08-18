@@ -32,7 +32,6 @@ export default function TermsPage() {
 
         {/* Title */}
         <h1 className="font-heading text-4xl font-bold text-primary mb-2">Terms &amp; Conditions</h1>
-        <p className="text-gray-500 text-sm mb-8">Effective: June 2025</p>
         <p className="text-gray-600 leading-relaxed mb-10">
           By accessing and using AlMuslims.com, you confirm that you have read, understood, and
           agree to be bound by these Terms and Conditions. Please read them carefully before using

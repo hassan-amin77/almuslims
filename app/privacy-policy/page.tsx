@@ -23,16 +23,13 @@ export default function PrivacyPage() {
     <main className="bg-white min-h-screen font-body">
       <div className="max-w-3xl mx-auto px-5 sm:px-8 py-12">
 
-        {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           <span>›</span>
           <span className="text-gray-600">Privacy Policy</span>
         </nav>
 
-        {/* Title */}
         <h1 className="font-heading text-4xl font-bold text-primary mb-2">Privacy Policy</h1>
-        <p className="text-gray-500 text-sm mb-8">Last updated: June 2025</p>
         <p className="text-gray-600 leading-relaxed mb-10">
           We recognise and acknowledge the importance of your personal data and are committed to
           respecting your privacy and protecting your personal information.
@@ -40,7 +37,6 @@ export default function PrivacyPage() {
 
         <hr className="border-gray-100 mb-10" />
 
-        {/* Sections */}
         <div className="space-y-10">
 
           <section>

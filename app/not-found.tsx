@@ -42,18 +42,6 @@ const navLinks = [
     link: "/categories",
     icon: <HiOutlineQueueList className="w-5 h-5 text-primary" />,
   },
-  {
-    title: "Aqeedah",
-    desc: "Strengthen your foundational belief in Allah.",
-    link: "/categories?category=aqeedah",
-    icon: <HiOutlineSparkles className="w-5 h-5 text-primary" />,
-  },
-  {
-    title: "Fiqh",
-    desc: "Islamic rulings for modern-day life.",
-    link: "/categories?category=fiqh",
-    icon: <HiOutlineScale className="w-5 h-5 text-primary" />,
-  },
 ];
 
 export default function NotFound() {
@@ -63,10 +51,8 @@ export default function NotFound() {
     <main className="min-h-screen bg-[#FAF7F2] font-body text-zinc-800">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-12 py-16 sm:py-24 space-y-24">
 
-        {/* ── HERO: 404 + SVG Illustration ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-          {/* Left: Text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}

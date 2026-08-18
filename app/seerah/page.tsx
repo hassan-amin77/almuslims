@@ -427,13 +427,13 @@ export default function SeerahPage() {
                   bg: "bg-primary/10 dark:bg-primary/20",
                 },
                 {
-                  label: "Meccan Phase",
+                  label: "Makki Phase",
                   value: meccanCount,
                   color: "text-amber-600 dark:text-amber-400",
                   bg: "bg-amber-50 dark:bg-amber-900/20",
                 },
                 {
-                  label: "Medinan Phase",
+                  label: "Madani Phase",
                   value: medinanCount,
                   color: "text-teal-600 dark:text-teal-400",
                   bg: "bg-teal-50 dark:bg-teal-900/20",
@@ -456,10 +456,8 @@ export default function SeerahPage() {
         </div>
       </section>
 
-      {/* ─── Search & Filter Controls ─── */}
       <section className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 -mt-10 mb-14 relative z-20">
         <div className="bg-white dark:bg-card rounded-[2.5rem] p-7 shadow-xl border border-white dark:border-zinc-800/50">
-          {/* Search */}
           <div className="relative mb-6">
             <HiOutlineMagnifyingGlass className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
@@ -472,7 +470,6 @@ export default function SeerahPage() {
             />
           </div>
 
-          {/* Phase filter tabs */}
           <div className="flex items-center gap-3 flex-wrap">
             {phaseFilters.map((f) => (
               <button
@@ -492,8 +489,6 @@ export default function SeerahPage() {
                 {f.label}
               </button>
             ))}
-
-            {/* Result count */}
             <span className="ml-auto text-xs text-gray-400 dark:text-zinc-500 font-medium">
               {filtered.length}{" "}
               {filtered.length === 1 ? "event" : "events"} found
