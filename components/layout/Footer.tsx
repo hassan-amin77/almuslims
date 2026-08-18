@@ -42,8 +42,7 @@ export default function Footer() {
         <div>
           <span className="block text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Quick Links</span>
           <ul className="space-y-5 text-[14px] text-white/80">
-            <li><Link href="/" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> Home</Link></li>
-            <li><Link href="/about" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> About Us</Link></li>
+            <li><Link href="/about-us" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> About Us</Link></li>
             <li><Link href="/contact" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> Contact Us</Link></li>
           </ul>
         </div>
@@ -51,11 +50,7 @@ export default function Footer() {
         <div>
           <span className="block text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Categories</span>
           <ul className="space-y-4 text-[14px] text-white/80">
-            <li><Link href="/categories" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> All Categories</Link></li>
-            <li><Link href="/holy-quran" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> Quran</Link></li>
-            <li><Link href="/categories?category=hadith" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> Hadith</Link></li>
-            <li><Link href="/dua-collection" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> Duas & Azkar</Link></li>
-            <li><Link href="/seerah" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> Seerah</Link></li>
+            <li><Link href="/categories/?category=quran" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> Quran</Link></li>
             <li><Link href="/names-of-allah" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> 99 Names of Allah</Link></li>
           </ul>
         </div>
@@ -63,9 +58,8 @@ export default function Footer() {
         <div>
           <span className="block text-[13px] font-bold text-secondary uppercase tracking-widest mb-6">Resources</span>
           <ul className="space-y-5 text-[14px] text-white/80">
-            <li><Link href="/faq" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> FAQ</Link></li>
-            <li><Link href="/privacy" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> Privacy Policy</Link></li>
-            <li><Link href="/terms" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> Terms & Conditions</Link></li>
+            <li><Link href="/privacy-policy" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> Privacy Policy</Link></li>
+            <li><Link href="/terms-and-conditions" className="hover:text-secondary transition-colors flex items-center gap-2"><FaChevronRight size={10} className="text-secondary" /> Terms & Conditions</Link></li>
           </ul>
         </div>
 

@@ -33,7 +33,7 @@ export default function ContactCTA() {
 
         <div className="relative z-10">
           <Link 
-            href="/about#contact" 
+            href="/contact" 
             className="flex items-center gap-3 px-8 py-4 bg-[#0A3A2F] text-white rounded-2xl font-bold text-sm hover:bg-[#0d4a3c] transition-all shadow-xl shadow-primary/10 active:scale-95"
           >
             <HiOutlineMail className="text-xl" />

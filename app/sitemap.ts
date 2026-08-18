@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/about`,
+      url: `${baseUrl}/about-us`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.6,
@@ -68,13 +68,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/privacy`,
+      url: `${baseUrl}/privacy-policy`,
       lastModified: currentDate,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/terms`,
+      url: `${baseUrl}/terms-and-conditions`,
       lastModified: currentDate,
       changeFrequency: "yearly",
       priority: 0.3,

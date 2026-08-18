@@ -1,10 +1,21 @@
 import React from "react";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Terms & Conditions — AlMuslims",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions – Rules for Using AlMuslims Website",
   description:
-    "Read the Terms and Conditions for using the AlMuslims platform and all its services.",
+    "Read AlMuslims Terms & Conditions covering website use, content, intellectual property, user responsibilities, disclaimers, and other important legal information.",
+  alternates: {
+    canonical: "/terms-and-conditions",
+  },
+  openGraph: {
+    title: "Terms & Conditions – Rules for Using AlMuslims Website",
+    description:
+      "Read AlMuslims Terms & Conditions covering website use, content, intellectual property, user responsibilities, disclaimers, and other important legal information.",
+    url: "/terms-and-conditions",
+  },
 };
 
 export default function TermsPage() {
@@ -126,7 +137,7 @@ export default function TermsPage() {
 
         <p className="text-gray-500 text-sm">
           Also read our{" "}
-          <Link href="/privacy" className="text-primary hover:underline">
+          <Link href="/privacy-policy" className="text-primary hover:underline">
             Privacy Policy
           </Link>.
         </p>

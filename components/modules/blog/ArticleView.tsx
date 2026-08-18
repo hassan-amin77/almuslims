@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   HiChevronRight,
-  HiChevronDown, HiChevronUp, HiSearch, HiSparkles
+  HiChevronDown, HiChevronUp, HiSearch
 } from "react-icons/hi";
 import { articles, Article, getArticleUrl } from "@/data/articles";
 import ArticleContent from "./ArticleContent";
@@ -17,7 +17,6 @@ interface ArticleViewProps {
 export default function ArticleView({ article }: ArticleViewProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [faqQuery, setFaqQuery] = useState("");
-  const [activeTocId, setActiveTocId] = useState<string>("");
 
   // Update page title and meta description dynamically
   useEffect(() => {
@@ -35,27 +34,6 @@ export default function ArticleView({ article }: ArticleViewProps) {
         metaDesc.setAttribute('content', article.metaDescription);
       }
     }
-  }, [article]);
-
-  // Track active TOC heading on scroll
-  useEffect(() => {
-    if (!article.tableOfContents || article.tableOfContents.length === 0) return;
-
-    const handleScroll = () => {
-      const headings = article.tableOfContents!.map(item => document.getElementById(item.id)).filter(Boolean);
-      const scrollPosition = window.scrollY + 200;
-
-      for (let i = headings.length - 1; i >= 0; i--) {
-        const heading = headings[i];
-        if (heading && heading.offsetTop <= scrollPosition) {
-          setActiveTocId(heading.id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
   }, [article]);
 
   // Filter FAQs if query entered
@@ -132,33 +110,6 @@ export default function ArticleView({ article }: ArticleViewProps) {
           {/* Main Article Content (Left Column) */}
           <article className="lg:col-span-8">
 
-            {/* Excerpt */}
-            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 font-normal border-l-4 border-primary/30 pl-5">
-              {article.excerpt}
-            </p>
-
-            {/* Mobile TOC Accordion */}
-            {article.tableOfContents && article.tableOfContents.length > 0 && (
-              <div className="lg:hidden mb-10 bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-                <h3 className="font-bold text-gray-900 text-base uppercase tracking-wider mb-4 flex items-center gap-2">
-                  <HiSparkles className="text-primary" /> Table of Contents
-                </h3>
-                <ul className="space-y-2 text-sm">
-                  {article.tableOfContents.map((item, idx) => (
-                    <li key={idx}>
-                      <a
-                        href={`#${item.id}`}
-                        className="text-gray-700 hover:text-primary transition-colors flex items-center gap-2"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0"></span>
-                        {item.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
             {/* Content Body */}
             <div className="prose prose-lg max-w-none prose-emerald text-gray-800">
               <ArticleContent content={article.content} />
@@ -201,12 +152,12 @@ export default function ArticleView({ article }: ArticleViewProps) {
                       >
                         <button
                           onClick={() => toggleFaq(index)}
-                          className="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-gray-900 text-base sm:text-lg hover:text-primary transition-colors"
+                          className="w-full text-left p-5 flex items-center justify-between gap-4 hover:text-primary transition-colors"
                         >
-                          <span className="flex items-start gap-3">
-                            <span className="text-primary font-serif font-bold text-lg">Q.</span>
-                            {faq.q}
-                          </span>
+                          <h3 className="flex items-start gap-3 font-bold text-gray-900 text-base sm:text-lg m-0">
+                            <span className="text-primary font-serif font-bold text-lg shrink-0">Q.</span>
+                            <span>{faq.q}</span>
+                          </h3>
                           {isOpen ? (
                             <HiChevronUp className="text-primary text-xl shrink-0" />
                           ) : (
@@ -215,8 +166,10 @@ export default function ArticleView({ article }: ArticleViewProps) {
                         </button>
 
                         {isOpen && (
-                          <div className="px-5 pb-6 pt-1 text-gray-700 leading-relaxed text-sm sm:text-base border-t border-gray-50 bg-gray-50/50">
-                            {faq.a}
+                          <div className="px-5 pb-6 pt-1 border-t border-gray-50 bg-gray-50/50">
+                            <p className="text-gray-700 leading-relaxed text-sm sm:text-base m-0">
+                              {faq.a}
+                            </p>
                           </div>
                         )}
                       </div>
@@ -238,9 +191,9 @@ export default function ArticleView({ article }: ArticleViewProps) {
                 <Image src={article.authorImg} alt={article.author} fill className="object-cover" />
               </div>
               <div className="text-center sm:text-left flex-1">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center justify-center sm:justify-start gap-2">
-                  {article.author} <span className="text-primary">✔</span>
-                </h3>
+                <span className="block text-xl font-bold text-gray-900 mb-2">
+                  {article.author}
+                </span>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   Dedicated editorial team and scholars providing authentic, accessible Islamic knowledge based on authentic Quranic and Prophetic sources.
                 </p>
@@ -252,42 +205,11 @@ export default function ArticleView({ article }: ArticleViewProps) {
           {/* Sidebar (Right Column) */}
           <aside className="lg:col-span-4 space-y-8 h-fit lg:sticky lg:top-28">
 
-            {/* Table of Contents */}
-            {article.tableOfContents && article.tableOfContents.length > 0 && (
-              <div className="hidden lg:block bg-white rounded-3xl border border-gray-200/80 p-6 shadow-sm">
-                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                  <HiSparkles className="text-primary" /> Table of Contents
-                </h3>
-                <div className="max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
-                  <ul className="space-y-2.5 text-xs font-medium">
-                    {article.tableOfContents.map((item, idx) => {
-                      const isActive = activeTocId === item.id;
-                      return (
-                        <li key={idx}>
-                          <a
-                            href={`#${item.id}`}
-                            className={`flex items-start gap-2.5 transition-all py-1 px-2 rounded-lg ${isActive
-                                ? "text-primary font-bold bg-primary/5"
-                                : "text-gray-600 hover:text-primary hover:bg-gray-50"
-                              }`}
-                          >
-                            <span className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${isActive ? "bg-primary" : "bg-gray-300"
-                              }`} />
-                            <span className="leading-snug">{item.title}</span>
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </div>
-            )}
-
             {/* Related Articles */}
             <div className="bg-white rounded-3xl border border-gray-200/80 p-6 shadow-sm">
-              <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
+              <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
                 Related Articles
-              </h3>
+              </h2>
               <div className="space-y-4">
                 {finalRelatedArticles.map((rel) => (
                   <Link
@@ -298,9 +220,9 @@ export default function ArticleView({ article }: ArticleViewProps) {
                     <span className="text-[10px] font-bold text-primary uppercase tracking-wider block mb-1">
                       {rel.category}
                     </span>
-                    <h4 className="font-heading font-bold text-gray-900 text-sm group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+                    <h3 className="font-heading font-bold text-gray-900 text-sm group-hover:text-primary transition-colors line-clamp-2 leading-snug">
                       {rel.title}
-                    </h4>
+                    </h3>
                     <p className="text-xs text-gray-400 mt-2">{rel.readTime}</p>
                   </Link>
                 ))}

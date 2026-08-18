@@ -40,6 +40,8 @@ export interface CategoryInfo {
   slug: string;
   count: number;
   description: string;
+  metaTitle?: string;
+  metaDescription?: string;
   href: string;
   iconType: "all" | "quran" | "hadith" | "seerah" | "aqeedah" | "fiqh" | "duas" | "names-of-allah" | "lifestyle" | "general";
 }
@@ -59,7 +61,9 @@ export const categoriesMeta: CategoryInfo[] = [
     name: "Quran",
     slug: "quran",
     count: 0,
-    description: "Tafsir, recitation rules, and Surah insights",
+    description: "Explore Quran articles on surahs, verses, tafsir, meanings, themes, history, and guidance. Learn and understand the Holy Quran through trusted Islamic resources.",
+    metaTitle: "Quran Articles – Meaning, Tafsir, Surahs & Islamic Guidance",
+    metaDescription: "Explore Quran articles on surahs, verses, tafsir, meanings, themes, history, and guidance. Learn and understand the Holy Quran through trusted Islamic resources.",
     href: "/categories?category=quran",
     iconType: "quran"
   },
@@ -104,7 +108,9 @@ export const categoriesMeta: CategoryInfo[] = [
     name: "Duas",
     slug: "duas",
     count: 0,
-    description: "Authentic supplications, Adhkar and morning/evening prayers",
+    description: "Explore authentic Islamic Dua articles with Arabic text, transliteration, meanings, sources, benefits, and guidance for daily life, worship, protection, and more.",
+    metaTitle: "Dua Articles – Authentic Islamic Duas, Meanings & Benefits",
+    metaDescription: "Explore authentic Islamic Dua articles with Arabic text, transliteration, meanings, sources, benefits, and guidance for daily life, worship, protection, and more.",
     href: "/categories?category=duas",
     iconType: "duas"
   },
@@ -409,7 +415,7 @@ export const articles: Article[] = [
       <p>By making dua regularly, Muslims nurture their faith, develop patience, and find comfort in Allah's mercy. No sincere dua is ever wasted, and every prayer brings a believer closer to their Creator. For this reason, dua remains an essential part of Islamic worship and a lifelong source of spiritual strength and peace.</p>
     `,
     author: "AlMuslims Editorial Team",
-    authorImg: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200",
+    authorImg: "/favicon.jpeg",
     authorRole: "Islamic Knowledge Team",
     isVerified: true,
     date: "2026-08-17",
@@ -642,7 +648,7 @@ export const articles: Article[] = [
       <p>Making dua for a new born baby is one of the most beautiful ways to thank Allah for the gift of a child. Through sincere supplication, parents and loved ones ask Allah to bless the newborn with good health, strong faith, protection, and a righteous future. In this guide, we explored a <b><a href="/dua-collection/">collection of duas</a></b>, including the dua for a newborn baby, dua to congratulate parents on a new baby, dua for newborn protection, dua for baby health, dua for a baby boy, dua for a baby girl, and Quranic supplications for righteous offspring. Islam also encourages following Sunnah practices such as Tahneek, Aqeeqah, and choosing a good name. Most importantly, dua should continue throughout a child's life. By regularly praying for their children, parents place them under Allah's care and seek blessings, guidance, and success for them in this world and the Hereafter. Ameen.</p>
     `,
     author: "AlMuslims Editorial Team",
-    authorImg: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200",
+    authorImg: "/favicon.jpeg",
     authorRole: "Islamic Knowledge Team",
     isVerified: true,
     date: "2026-08-17",
@@ -819,7 +825,7 @@ export const articles: Article[] = [
       <p>By reciting these verses regularly, especially before sleeping, Muslims can strengthen their connection with Allah, gain spiritual comfort, and benefit from the immense rewards mentioned in authentic hadith. Their message remains timeless: believe sincerely, obey Allah faithfully, seek His forgiveness constantly, and trust in His mercy through every stage of life.</p>
     `,
     author: "AlMuslims Editorial Team",
-    authorImg: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200",
+    authorImg: "/favicon.jpeg",
     authorRole: "Islamic Knowledge Team",
     isVerified: true,
     date: "2026-08-17",
@@ -953,7 +959,7 @@ export const articles: Article[] = [
       </ul>
 
       <h2 id="how-preserved">How Was the Quran Preserved?</h2>
-      <img src="/blogs/Quran/what-is-quran/how-quran-preserved.webp" alt="Quran-preserved" />
+      <img src="/blogs/Quran/what-is-quran/how-was-the-quran-preserved.webp" alt="Quran-preserved" />
       <p>Islamic scholarship identifies two parallel preservation methods.</p>
       <p><strong>Oral transmission:</strong> Large numbers of Muhammad's (Sallallahu alaihi wasallam) companions memorized portions some the entire text during his lifetime. This practice of memorization (hifz) has continued unbroken; millions of hafiz worldwide today serve as a continuing verification against textual alteration.</p>
       <p><strong>Written transmission:</strong> The Abu Bakr compilation, followed by the Uthmanic standardization, established a single fixed reference. Early manuscript evidence supports early textual stability: the Birmingham manuscript, for example, has been radiocarbon-dated to within decades of Muhammad's (Sallallahu alaihi wasallam) life, though academic discussion continues regarding dating methodology and minor regional recitation variants (qira'at).</p>
@@ -1155,16 +1161,15 @@ export const articles: Article[] = [
       </ol>
     `,
     author: "AlMuslims Editorial Team",
-    authorImg: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200",
+    authorImg: "/favicon.jpeg",
     authorRole: "Islamic Knowledge Team",
     isVerified: true,
     date: "2026-08-17",
     displayDate: "August 17, 2026",
     readTime: "15 min read",
-    image: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=800",
+    image: "",
     level: "Beginner",
     isFeatured: true,
-    topics: ["Quran", "Revelation", "Islam", "Mushaf", "Tafsir"],
     tableOfContents: [
       { title: "Quick Facts", id: "quick-facts" },
       { title: "Revelation Timeline (610–632 CE)", id: "revelation-timeline" },

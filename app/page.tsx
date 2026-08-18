@@ -17,6 +17,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <link rel="canonical" href="https://almuslims.com" />
+      <meta property="og:url" content="https://almuslims.com" />
       <HeroSection />
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 mt-4 md:mt-16 relative z-20 pb-10">
         <div className="bg-white/80 backdrop-blur-md rounded-[2rem] p-4 sm:p-6 lg:p-8 shadow-2xl border border-primary/5">

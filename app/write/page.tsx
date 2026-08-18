@@ -1,9 +1,19 @@
 import React from "react";
 import Link from "next/link";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Write for Us — AlMuslims",
   description: "Contribute to AlMuslims and share authentic Islamic knowledge.",
+  alternates: {
+    canonical: "/write",
+  },
+  openGraph: {
+    title: "Write for Us — AlMuslims",
+    description: "Contribute to AlMuslims and share authentic Islamic knowledge.",
+    url: "/write",
+  },
 };
 
 export default function WritePage() {

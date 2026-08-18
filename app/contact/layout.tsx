@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us — AlMuslims",
+  title: "Contact AlMuslims – Questions, Feedback & Islamic Content",
   description:
-    "Get in touch with the AlMuslims team for inquiries, corrections, partnerships, or support regarding our Islamic knowledge platform.",
+    "Contact AlMuslims for questions, feedback, corrections, suggestions, or content inquiries. We welcome your feedback as we work to provide reliable Islamic resources.",
+  alternates: {
+    canonical: "/contact",
+  },
   openGraph: {
-    title: "Contact Us — AlMuslims",
+    title: "Contact AlMuslims – Questions, Feedback & Islamic Content",
     description:
-      "Get in touch with the AlMuslims team for inquiries, corrections, partnerships, or support regarding our Islamic knowledge platform.",
+      "Contact AlMuslims for questions, feedback, corrections, suggestions, or content inquiries. We welcome your feedback as we work to provide reliable Islamic resources.",
+    url: "/contact",
   },
   twitter: {
-    title: "Contact Us — AlMuslims",
+    title: "Contact AlMuslims – Questions, Feedback & Islamic Content",
     description:
-      "Get in touch with the AlMuslims team for inquiries, corrections, partnerships, or support regarding our Islamic knowledge platform.",
+      "Contact AlMuslims for questions, feedback, corrections, suggestions, or content inquiries. We welcome your feedback as we work to provide reliable Islamic resources.",
   },
 };
 

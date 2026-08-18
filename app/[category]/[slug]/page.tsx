@@ -27,13 +27,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const title = article.metaTitle || article.title;
   const description = article.metaDescription || article.excerpt;
+  const canonicalUrl = `/${category}/${slug}`;
 
   return {
     title,
     description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title,
       description,
+      url: canonicalUrl,
       images: article.image ? [{ url: article.image }] : undefined,
     },
     twitter: {

@@ -59,24 +59,19 @@ export default function WordOfTheDayCard() {
     <div className="h-full flex flex-col p-6 sm:p-8 rounded-[1.5rem] font-body relative overflow-hidden"
       style={{ background: "linear-gradient(160deg, #FFFDF9 0%, #FDF8F0 100%)", border: "1px solid #F0E8D5" }}>
 
-      {/* Gold accent top line */}
       <div className="absolute top-0 left-8 right-8 h-0.5 rounded-full"
         style={{ background: "linear-gradient(90deg, transparent, #C8A96E, transparent)" }} />
 
-      {/* Watermark */}
       <div className="absolute bottom-16 right-4 text-[80px] font-serif text-[#042A1E]/[0.03] pointer-events-none select-none leading-none">
         ٩٩
       </div>
 
-      {/* Header */}
       <div className="text-center mb-5 relative z-10">
         <p className="text-[10px] font-bold text-[#042A1E] tracking-[0.2em] uppercase mb-1">Word of the Day</p>
         <p className="text-[9px] text-[#C8A96E] font-semibold tracking-wide">{dateStr}</p>
       </div>
 
-      {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-center relative z-10 text-center">
-        {/* Arabic Word */}
         <div className="relative mb-2">
           <div className="absolute inset-0 rounded-full blur-2xl opacity-20"
             style={{ background: "radial-gradient(circle, #C8A96E, transparent)" }} />
@@ -86,26 +81,22 @@ export default function WordOfTheDayCard() {
           </p>
         </div>
 
-        {/* English name */}
         <p className="text-md font-black text-[#042A1E]/50 tracking-[0.25em] uppercase mb-2 mt-4">
           {wordData.en}
         </p>
 
-        {/* Meaning badge */}
+        
         <span className="inline-block text-[12px] font-bold text-[#C8A96E] border border-[#C8A96E]/30 px-3 py-1 rounded-full bg-[#C8A96E]/5 tracking-wider mb-4">
           {wordData.meaning}
         </span>
 
-        {/* Divider */}
         <div className="w-10 h-px bg-[#042A1E]/10 mb-4" />
 
-        {/* Definition */}
         <p className="text-md text-[#042A1E]/55 leading-relaxed px-1 line-clamp-3">
           {wordData.def}
         </p>
       </div>
 
-      {/* Footer */}
       <a href="/names-of-allah"
         className="relative z-10 mt-6 w-full py-3.5 text-center text-sm font-semibold text-[#042A1E]/70 rounded-full transition-all duration-300 block hover:text-white"
         style={{ border: "1px solid rgba(4,42,30,0.12)" }}

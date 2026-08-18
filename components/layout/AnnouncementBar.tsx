@@ -25,7 +25,7 @@ export default function AnnouncementBar() {
       </div>
       <div className="hidden md:flex items-center gap-6">
         <div className="flex gap-4 font-semibold">
-          <Link href="/about" className="hover:underline">About Us</Link>
+          <Link href="/about-us" className="hover:underline">About Us</Link>
         </div>
       </div>
     </div>

@@ -1,10 +1,21 @@
 import React from "react";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Privacy Policy — AlMuslims",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy – How AlMuslims Protects Your Personal Data",
   description:
-    "Read AlMuslims' Privacy Policy to understand how we handle and protect your personal information.",
+    "Read the AlMuslims Privacy Policy to learn how we collect, use, protect, store, and manage personal information and your rights when using our website.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy – How AlMuslims Protects Your Personal Data",
+    description:
+      "Read the AlMuslims Privacy Policy to learn how we collect, use, protect, store, and manage personal information and your rights when using our website.",
+    url: "/privacy-policy",
+  },
 };
 
 export default function PrivacyPage() {

@@ -378,18 +378,11 @@ function CategoriesPageContent() {
       <section className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 mt-6">
         <div className="flex items-center justify-between gap-2 mb-3 px-1">
           <span className="text-xs font-bold uppercase tracking-wider text-gray-400">Featured Streams</span>
-          <button
-            onClick={() => handleCategorySelect("all")}
-            className="text-xs font-bold text-secondary hover:text-primary transition-colors flex items-center gap-1 cursor-pointer"
-          >
-            <span>View All</span>
-            <FaArrowRight className="text-[10px]" />
-          </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
           {dynamicCategories
-            .filter((cat) => ["quran", "duas", "names-of-allah"].includes(cat.id.toLowerCase()))
+            .filter((cat) => ["quran", "duas"].includes(cat.id.toLowerCase()))
             .map((cat) => {
               const isSelected = activeCategory.toLowerCase() === cat.id.toLowerCase();
               return (
@@ -421,10 +414,10 @@ function CategoriesPageContent() {
                   </div>
 
                   <div>
-                    <h3 className={`text-base font-bold tracking-tight transition-colors ${isSelected ? "text-white" : "text-gray-800 group-hover:text-primary"
+                    <h2 className={`text-base font-bold tracking-tight transition-colors ${isSelected ? "text-white" : "text-gray-800 group-hover:text-primary"
                       }`}>
                       {cat.name}
-                    </h3>
+                    </h2>
                     <p className={`text-xs font-medium mt-0.5 ${isSelected ? "text-emerald-100/80" : "text-gray-400"
                       }`}>
                       {cat.count} {cat.count === 1 ? "Article" : "Articles"}
@@ -791,122 +784,12 @@ function CategoriesPageContent() {
               </div>
             </div>
 
-            {/* Widget 2: Core Portals Quick Access */}
-            <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm">
-              <h3 className="text-xs font-heading font-bold text-gray-900 uppercase tracking-wider mb-3">
-                Core Islamic Resources
-              </h3>
-              <div className="grid grid-cols-2 gap-2.5">
-                <Link
-                  href="/holy-quran"
-                  className="p-3.5 rounded-2xl bg-[#FAF7F2] hover:bg-amber-50/70 border border-transparent hover:border-amber-200 transition-all text-left group"
-                >
-                  <div className="mb-2">
-                    <QuranIcon className="w-6 h-6 group-hover:scale-110 transition-transform" primaryColor="#0A3A2F" secondaryColor="#D48C46" />
-                  </div>
-                  <span className="block text-xs font-bold text-gray-800">Holy Quran</span>
-                  <span className="text-[10px] text-gray-400">114 Surahs</span>
-                </Link>
-
-                <Link
-                  href="/dua-collection"
-                  className="p-3.5 rounded-2xl bg-[#FAF7F2] hover:bg-orange-50/70 border border-transparent hover:border-orange-200 transition-all text-left group"
-                >
-                  <div className="mb-2">
-                    <DuasIcon className="w-6 h-6 group-hover:scale-110 transition-transform" primaryColor="#9A3412" secondaryColor="#D48C46" />
-                  </div>
-                  <span className="block text-xs font-bold text-gray-800">Duas & Azkar</span>
-                  <span className="text-[10px] text-gray-400">Daily supplications</span>
-                </Link>
-
-                <Link
-                  href="/seerah"
-                  className="p-3.5 rounded-2xl bg-[#FAF7F2] hover:bg-emerald-50/70 border border-transparent hover:border-emerald-200 transition-all text-left group"
-                >
-                  <div className="mb-2">
-                    <SeerahIcon className="w-6 h-6 group-hover:scale-110 transition-transform" primaryColor="#065F46" secondaryColor="#D48C46" />
-                  </div>
-                  <span className="block text-xs font-bold text-gray-800">Seerah</span>
-                  <span className="text-[10px] text-gray-400">Prophetic life</span>
-                </Link>
-
-                <Link
-                  href="/names-of-allah"
-                  className="p-3.5 rounded-2xl bg-[#FAF7F2] hover:bg-amber-50/70 border border-transparent hover:border-amber-200 transition-all text-left group"
-                >
-                  <div className="mb-2">
-                    <NamesOfAllahIcon className="w-6 h-6 group-hover:scale-110 transition-transform" primaryColor="#B45309" secondaryColor="#D48C46" />
-                  </div>
-                  <span className="block text-xs font-bold text-gray-800">99 Names</span>
-                  <span className="text-[10px] text-gray-400">Asma-ul-Husna</span>
-                </Link>
-              </div>
-            </div>
 
           </div>
 
         </div>
       </div>
 
-      {/* ─── Pre-Footer CTA: Continue Your Journey of Knowledge ─── */}
-      <section className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-        <div className="relative overflow-hidden bg-linear-to-r from-[#063327] via-[#0A3A2F] to-[#063327] rounded-3xl p-8 sm:p-12 text-white shadow-2xl border border-white/5">
-          {/* Mosque background silhouette */}
-          <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none hidden md:block">
-            <svg width="320" height="140" viewBox="0 0 320 140" fill="none">
-              <path d="M280 140V80C280 60 260 50 260 50C260 50 240 60 240 80V140H280Z" fill="currentColor" />
-              <path d="M200 140V40C200 20 180 10 180 10C180 10 160 20 160 40V140H200Z" fill="currentColor" />
-              <path d="M120 140V70C120 50 100 40 100 40C100 40 80 50 80 70V140H120Z" fill="currentColor" />
-            </svg>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            <div className="lg:col-span-6 space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-amber-300 text-lg">
-                  ✉
-                </div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-white">
-                  Continue Your Journey of Knowledge
-                </h3>
-              </div>
-              <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light max-w-lg">
-                Join thousands of Muslims and get authentic Islamic content, weekly reminders, and classical insights delivered directly to your inbox.
-              </p>
-            </div>
-
-            <div className="lg:col-span-6">
-              {footerEmailSuccess ? (
-                <div className="bg-white/15 backdrop-blur-md rounded-2xl p-4 text-center text-sm text-emerald-100 font-bold border border-white/20">
-                  ✓ JazakAllah Khair! You are now part of our newsletter circle.
-                </div>
-              ) : (
-                <form onSubmit={handleFooterEmailSubmit} className="space-y-2">
-                  <div className="flex flex-col sm:flex-row gap-2.5">
-                    <input
-                      type="email"
-                      required
-                      value={footerEmail}
-                      onChange={(e) => setFooterEmail(e.target.value)}
-                      placeholder="Enter your email address"
-                      className="flex-1 bg-white text-gray-900 px-4 py-3 rounded-2xl text-xs sm:text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary font-medium"
-                    />
-                    <button
-                      type="submit"
-                      className="px-6 py-3 bg-[#D48C46] hover:bg-[#b87635] text-white font-bold text-xs sm:text-sm rounded-2xl transition-all shadow-md hover:shadow-lg shrink-0 cursor-pointer"
-                    >
-                      Subscribe Now
-                    </button>
-                  </div>
-                  <p className="text-[10px] sm:text-[11px] text-white/50 text-center sm:text-left flex items-center gap-1.5">
-                    <span>🛡️</span> No spam. Unsubscribe anytime.
-                  </p>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
 
     </div>
   );

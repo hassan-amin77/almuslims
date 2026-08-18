@@ -95,13 +95,13 @@ function FAQItem({
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left group transition-all"
       >
-        <span
-          className={`text-[15px] font-bold transition-colors ${
+        <h3
+          className={`text-[15px] font-bold transition-colors m-0 ${
             isOpen ? "text-primary" : "text-gray-700 group-hover:text-primary"
           }`}
         >
           {question}
-        </span>
+        </h3>
         <HiOutlineChevronDown
           className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${
             isOpen ? "rotate-180 text-primary" : ""

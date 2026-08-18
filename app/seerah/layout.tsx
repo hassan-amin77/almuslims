@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Seerah Timeline — AlMuslims",
+  title: "Seerah of Prophet Muhammad (PBUH) – Life & Lessons Guide",
   description:
-    "Explore the key milestones in the blessed life of Prophet Muhammad ﷺ — his spiritual mission, constitutional leadership, and enduring legacy.",
+    "Learn the Seerah of Prophet Muhammad (PBUH), from his birth and prophethood to major events, character, leadership, and timeless Islamic lessons.",
+  alternates: {
+    canonical: "/seerah",
+  },
   openGraph: {
-    title: "Seerah Timeline — AlMuslims",
+    title: "Seerah of Prophet Muhammad (PBUH) – Life & Lessons Guide",
     description:
-      "Explore the key milestones in the blessed life of Prophet Muhammad ﷺ — his spiritual mission, constitutional leadership, and enduring legacy.",
+      "Learn the Seerah of Prophet Muhammad (PBUH), from his birth and prophethood to major events, character, leadership, and timeless Islamic lessons.",
+    url: "/seerah",
   },
   twitter: {
-    title: "Seerah Timeline — AlMuslims",
+    title: "Seerah of Prophet Muhammad (PBUH) – Life & Lessons Guide",
     description:
-      "Explore the key milestones in the blessed life of Prophet Muhammad ﷺ — his spiritual mission, constitutional leadership, and enduring legacy.",
+      "Learn the Seerah of Prophet Muhammad (PBUH), from his birth and prophethood to major events, character, leadership, and timeless Islamic lessons.",
   },
 };
 

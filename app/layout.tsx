@@ -52,7 +52,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://almuslims.com",
     siteName: "AlMuslims",
     title: "Quran, Duas, Seerah & Islamic Knowledge | AlMuslims",
     description:
@@ -73,9 +72,6 @@ export const metadata: Metadata = {
       "Discover the Quran, Names of Allah, Seerah, authentic Duas, and meaningful Islamic knowledge designed to help you learn, reflect, and strengthen your faith.",
     images: ["/logo.png"],
     creator: "@officialalmuslims",
-  },
-  alternates: {
-    canonical: "https://almuslims.com",
   },
 };
 

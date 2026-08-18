@@ -9,22 +9,27 @@ This document contains detailed structured summaries of the AlMuslims knowledge 
 - Motto: Authentic Islamic Knowledge
 - Mission: Providing verified Islamic scholarship, primary source texts (Quran and Hadith), Duas, Seerah, Asma-ul-Husna, and Fiqh rulings for believers worldwide.
 - URL: https://almuslims.com
+- About Page: https://almuslims.com/about-us
+- Contact Page: https://almuslims.com/contact
+- Privacy Policy: https://almuslims.com/privacy-policy
+- Terms & Conditions: https://almuslims.com/terms-and-conditions
 
 ---
 
 ## 2. Core Disciplines & Categorization
 
 ### Holy Quran (القرآن الكريم)
+- URL: https://almuslims.com/holy-quran
 - Description: The verbatim word of Allah revealed to Prophet Muhammad ﷺ through Angel Jibreel (Gabriel).
 - Scope: 114 Surahs, 6,236 Ayahs, divided into 30 Juz.
 - Key Topics: Monotheism (Tawheed), Prophethood (Risalah), Eschatology/Hereafter (Akhirah), Legal Rulings (Ahkam), and Moral Parables (Qasas).
 
-### Hadith & Sunnah (الحديث الشريف والسنة النبوية)
-- Description: The recorded statements, deeds, tacit approvals, and physical descriptions of Prophet Muhammad ﷺ.
-- Primary Canons: Sahih al-Bukhari, Sahih Muslim, Sunan Abi Dawud, Jami' at-Tirmidhi, Sunan an-Nasa'i, Sunan Ibn Majah (Kutub al-Sittah).
-- Methodology: Rigorous transmission chain analysis (Isnad) and narrator evaluation (Ilm al-Rijal).
+### Categories Hub
+- URL: https://almuslims.com/categories
+- Description: Categorized exploration of Islamic resources across all key topics.
 
 ### Duas & Adhkar (الأدعية والأذكار اليومية)
+- URL: https://almuslims.com/dua-collection
 - Description: Devotional supplications from the Quran and Sunnah.
 - Categories:
   1. Morning and Evening Adhkar (Protective remembrances)
@@ -33,10 +38,16 @@ This document contains detailed structured summaries of the AlMuslims knowledge 
   4. Duas for Newborns, Family, Meals, Travel, and Health Protection
 
 ### Seerah of Prophet Muhammad ﷺ (السيرة النبوية)
+- URL: https://almuslims.com/seerah
 - Description: The comprehensive historical account of the Prophet's life (570–632 CE).
 
 ### 99 Names of Allah (أسماء الله الحسنى)
+- URL: https://almuslims.com/names-of-allah
 - Description: The beautiful names and sublime attributes through which Allah describes Himself in the Quran and Sunnah.
+
+### Prayer Times & Calendar
+- URL: https://almuslims.com/prayer-times
+- Description: Accurate calculation methods for Salah timings and Hijri calendar conversions.
 
 ---
 

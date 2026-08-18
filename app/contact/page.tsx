@@ -269,7 +269,7 @@ export default function ContactUsPage() {
 
           {/* Contact Info */}
           <div className="bg-white rounded-3xl border border-gray-100 p-8 shadow-sm">
-            <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-6">Get in Touch</h4>
+            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-6">Get in Touch</span>
             <p className="text-sm text-gray-600 mb-4">
               Reach out to us directly via email and we&apos;ll get back to you as soon as possible.
             </p>
