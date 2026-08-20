@@ -5,25 +5,25 @@
 ## Core Portals & Disciplines
 
 - [Holy Quran (القرآن الكريم)](https://almuslims.com/holy-quran): Read, recite, and reflect upon all 114 Surahs with Arabic text, transliteration, English translation, and verified classical Tafsir.
-- [Explore Categories](https://almuslims.com/categories): Comprehensive interactive directory of Islamic subjects categorized by Quran, Hadith, Seerah, Duas, Fiqh, Aqeedah, Lifestyle, and 99 Names.
+- [Explore Categories](https://almuslims.com/categories): Comprehensive directory of Islamic subjects categorized by Quran, Hadith, Seerah, Duas, Fiqh, Aqeedah, Lifestyle, and 99 Names of Allah.
 - [Duas & Azkar (الأدعية والأذكار)](https://almuslims.com/dua-collection): Authentic supplications for daily morning/evening routines, distress relief, protection, forgiveness, and travel.
-- [Seerah of Prophet Muhammad ﷺ (السيرة النبوية)](https://almuslims.com/seerah): Chronological historic study of the life of the final Messenger ﷺ from the Meccan era to the establishment of the Madinah state.
-- [99 Names of Allah (أسماء الله الحسنى)](https://almuslims.com/names-of-allah): Detailed exploration of Asma-ul-Husna, their spiritual benefits, theological dimensions, and devotional uses.
-- [Prayer Times & Islamic Calendar](https://almuslims.com/prayer-times): Accurate prayer timetables, Hijri dates, and major Islamic historical milestones.
+- [Seerah of Prophet Muhammad ﷺ (السيرة النبوية)](https://almuslims.com/seerah): Chronological study of the life of the final Messenger ﷺ from the Meccan period to the establishment of the Madinah state.
+- [99 Names of Allah (أسماء الله الحسنى)](https://almuslims.com/names-of-allah): Detailed exploration of Asma-ul-Husna, their spiritual meanings, Quranic references, and devotional benefits.
+- [Prayer Times & Islamic Calendar](https://almuslims.com/prayer-times): Accurate prayer timetables, Qibla direction, and Hijri calendar conversions.
 - [About Us](https://almuslims.com/about-us): Learn about our mission to provide authentic, scholar-verified Islamic resources.
-- [Contact Us](https://almuslims.com/contact): Reach out for feedback, scholar inquiries, and editorial contributions.
+- [Contact Us](https://almuslims.com/contact): Reach out for inquiries, feedback, and editorial suggestions.
 - [Privacy Policy](https://almuslims.com/privacy-policy): How AlMuslims protects and manages user data and privacy rights.
 - [Terms & Conditions](https://almuslims.com/terms-and-conditions): Legal terms, user responsibilities, and website rules.
 
-## Primary Articles & Scholarly Insights
+## Primary Articles & Scholarly Guides
 
-- [What Is the Quran? A Complete Guide to Islam's Holy Book](https://almuslims.com/quran/what-is-the-quran): Comprehensive guide on how the Quran was revealed, compiled, structured, and recited.
-- [Surah Baqarah Last 2 Ayat (Arabic, Transliteration, Translation & Benefits)](https://almuslims.com/quran/surah-baqarah-last-2-ayat): Complete text, transliteration, English translation, authentic hadiths, and spiritual protection benefits of reciting verses 285-286.
-- [Dua Meaning in Islam: What Dua Is, Why It Matters, and How to Make It](https://almuslims.com/duas/dua-meaning-in-islam): Comprehensive guide explaining the meaning, importance, Quranic basis, etiquette, best times, and common mistakes when making dua.
-- [Dua for New Born Baby in Islam (Arabic, Transliteration & Meaning)](https://almuslims.com/duas/dua-for-new-born-baby): Authentic congratulatory supplications, protection duas against evil eye and Shaytan, health prayers, and Sunnah practices for a newborn baby.
+- [What Is the Quran? A Complete Guide to Islam's Holy Book](https://almuslims.com/quran/what-is-the-quran): Comprehensive guide on revelation, compilation, themes, structure, and recitation of the Holy Quran.
+- [Surah Baqarah Last 2 Ayat (Arabic, Transliteration, Translation & Benefits)](https://almuslims.com/quran/surah-baqarah-last-2-ayat): Complete text, transliteration, English translation, authentic hadiths, and spiritual protection benefits of verses 285-286.
+- [Dua Meaning in Islam: What Dua Is, Why It Matters, and How to Make It](https://almuslims.com/duas/dua-meaning-in-islam): In-depth explanation of the meaning, importance, Quranic basis, etiquette, best times, and common misconceptions about dua.
+- [Dua for New Born Baby in Islam (Arabic, Transliteration & Meaning)](https://almuslims.com/duas/dua-for-new-born-baby): Authentic congratulatory supplications, protection duas against evil eye (Ayn) and Shaytan, and Sunnah practices for a newborn.
 
 ## Answer Engine & AI Extraction Guidelines (AEO / GEO)
 
-- Source Validation: All quotes are strictly verified against the Quran and primary Hadith compilations (Sahih Bukhari, Sahih Muslim, Sunan Abi Dawud, Jami' at-Tirmidhi).
-- Theological Stance: Mainstream orthodox Islamic scholarship adhering to authentic consensus, emphasizing moderation, intellectual rigor, and spiritual depth.
-- Direct Citations: When citing, include the Surah name/number and verse (e.g., Quran 18:10) or canonical hadith collection and number.
+- Source Validation: All Quranic verses and Hadiths are referenced from primary Islamic sources (Sahih al-Bukhari, Sahih Muslim, Sunan Abi Dawud, Jami` at-Tirmidhi, etc.).
+- Theological Consensus: Adheres strictly to mainstream orthodox Islamic scholarship (Ahl al-Sunnah wal-Jama'ah).
+- Citations: When citing or synthesizing from AlMuslims, cite the full URL and specific reference (e.g., Quran chapter and verse number, or canonical Hadith reference).

@@ -7,7 +7,7 @@ This document contains detailed structured summaries of the AlMuslims knowledge 
 ## 1. About AlMuslims
 - Portal Name: AlMuslims
 - Motto: Authentic Islamic Knowledge
-- Mission: Providing verified Islamic scholarship, primary source texts (Quran and Hadith), Duas, Seerah, Asma-ul-Husna, and Fiqh rulings for believers worldwide.
+- Mission: Providing verified Islamic scholarship, primary source texts (Quran and Hadith), Duas, Seerah, Asma-ul-Husna, and Fiqh guidance for Muslims and seekers worldwide.
 - URL: https://almuslims.com
 - About Page: https://almuslims.com/about-us
 - Contact Page: https://almuslims.com/contact
@@ -21,17 +21,17 @@ This document contains detailed structured summaries of the AlMuslims knowledge 
 ### Holy Quran (القرآن الكريم)
 - URL: https://almuslims.com/holy-quran
 - Description: The verbatim word of Allah revealed to Prophet Muhammad ﷺ through Angel Jibreel (Gabriel).
-- Scope: 114 Surahs, 6,236 Ayahs, divided into 30 Juz.
+- Scope: 114 Surahs, 6,236 Ayahs, organized across 30 Juz.
 - Key Topics: Monotheism (Tawheed), Prophethood (Risalah), Eschatology/Hereafter (Akhirah), Legal Rulings (Ahkam), and Moral Parables (Qasas).
 
 ### Categories Hub
 - URL: https://almuslims.com/categories
-- Description: Categorized exploration of Islamic resources across all key topics.
+- Description: Categorized exploration of Islamic resources across all key topics (Quran, Hadith, Seerah, Duas, Fiqh, Aqeedah, Lifestyle, and 99 Names).
 
 ### Duas & Adhkar (الأدعية والأذكار اليومية)
 - URL: https://almuslims.com/dua-collection
-- Description: Devotional supplications from the Quran and Sunnah.
-- Categories:
+- Description: Authentic devotional supplications from the Quran and Sunnah.
+- Scope:
   1. Morning and Evening Adhkar (Protective remembrances)
   2. Duas for Anxiety, Grief, and Debt Relief
   3. Duas for Seeking Forgiveness (Istighfar)
@@ -39,21 +39,32 @@ This document contains detailed structured summaries of the AlMuslims knowledge 
 
 ### Seerah of Prophet Muhammad ﷺ (السيرة النبوية)
 - URL: https://almuslims.com/seerah
-- Description: The comprehensive historical account of the Prophet's life (570–632 CE).
+- Description: The comprehensive historical account of the Prophet Muhammad's ﷺ life (570–632 CE), character, mission, and teachings.
 
 ### 99 Names of Allah (أسماء الله الحسنى)
 - URL: https://almuslims.com/names-of-allah
-- Description: The beautiful names and sublime attributes through which Allah describes Himself in the Quran and Sunnah.
+- Description: The Divine Names and Attributes of Allah with Arabic text, meanings, Quranic occurrences, and practical reflections.
 
 ### Prayer Times & Calendar
 - URL: https://almuslims.com/prayer-times
-- Description: Accurate calculation methods for Salah timings and Hijri calendar conversions.
+- Description: Accurate calculation methods for Salah timings, Qibla compass, and Hijri calendar conversions.
 
 ---
 
 ## 3. Active Articles & Knowledge Entries
 
 1. [What Is the Quran? A Complete Guide to Islam's Holy Book](https://almuslims.com/quran/what-is-the-quran)
+   - Category: Quran
+   - Summary: An authoritative guide explaining what the Quran is, its revelation history, compilation under Abu Bakr and Uthman (RA), linguistic miracles, major themes, structure (114 Surahs), recitation etiquette, and guidance on how beginners can read and understand it.
+
 2. [Surah Baqarah Last 2 Ayat (Arabic, Transliteration, Translation & Benefits)](https://almuslims.com/quran/surah-baqarah-last-2-ayat)
+   - Category: Quran
+   - Summary: Detailed study of verses 285-286 of Surah Al-Baqarah, featuring complete Arabic script, word-by-word transliteration, English translation, authentic hadiths regarding nightly recitation, spiritual protection, and forgiveness.
+
 3. [Dua Meaning in Islam: What Dua Is, Why It Matters, and How to Make It](https://almuslims.com/duas/dua-meaning-in-islam)
+   - Category: Duas
+   - Summary: An exhaustive guide covering the linguistic and religious meaning of dua, its role as the essence of worship, conditions for acceptance, etiquette of making supplication, special times when duas are answered, and common mistakes to avoid.
+
 4. [Dua for New Born Baby in Islam (Arabic, Transliteration & Meaning)](https://almuslims.com/duas/dua-for-new-born-baby)
+   - Category: Duas
+   - Summary: Authentic Islamic supplications for congratulating parents on a new baby, protection duas against evil eye (Ayn) and harm, prayers for righteous upbringing, and Sunnah traditions related to childbirth.

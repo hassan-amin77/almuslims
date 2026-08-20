@@ -18,7 +18,7 @@ export async function generateMetadata({
     .join(" ");
 
   const title = `${formattedTitle} — Holy Quran | AlMuslims`;
-  const description = `Read and reflect on ${formattedTitle} with Arabic text, transliteration, and authentic English and Urdu translations on AlMuslims.`;
+  const description = `Read and reflect on ${formattedTitle} with Arabic text, transliteration, and authentic English translation on AlMuslims.`;
 
   return {
     title,

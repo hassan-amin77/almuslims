@@ -631,7 +631,6 @@ function CategoriesPageContent() {
                 </div>
               )}
 
-              {/* 3. Pagination Controls */}
               {totalPages > 1 && (
                 <div className="flex items-center justify-center gap-2 pt-6">
                   <button
