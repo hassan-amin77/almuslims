@@ -190,7 +190,6 @@ export default function PrayerCard() {
           </div>
         </div>
 
-        {/* Prayer Pills */}
         <div className="grid grid-cols-5 gap-1.5 sm:gap-2 w-full">
           {prayersList.map((prayer) => {
             const isActive = prayer.name === currentPrayer.name;
