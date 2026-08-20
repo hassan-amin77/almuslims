@@ -178,12 +178,11 @@ export default function PrayerCard() {
         </div>
       </div>
 
-      {/* Current Prayer Display */}
       <div className="flex-1 flex flex-col justify-center mb-6 z-10">
         <div className="mb-6">
-          <h3 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-2 tracking-wide transition-all duration-500">
+          <span className="text-4xl sm:text-5xl font-serif font-bold text-white mb-2 tracking-wide transition-all duration-500">
             {currentPrayer.name}
-          </h3>
+          </span>
           <div className="flex items-end gap-3">
             <p className="text-2xl text-secondary font-semibold tracking-wide">
               {currentDisplayTime}

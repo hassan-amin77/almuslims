@@ -98,9 +98,9 @@ export default function StatsBar() {
             <FiAward />
           </div>
           <div className="flex flex-col items-start text-left">
-            <h3 className="text-2xl sm:text-3xl font-bold font-serif text-[#1F2926] mb-0.5 tracking-tight leading-none">
+            <span className="text-2xl sm:text-3xl font-bold font-serif text-[#1F2926] mb-0.5 tracking-tight leading-none">
               <AnimatedCounter target={100} suffix="%" />
-            </h3>
+            </span>
             <p className="text-[10px] sm:text-[11px] text-[#1F2926]/60 font-semibold tracking-wider">Authentic Content</p>
           </div>
         </div>
