@@ -8,7 +8,6 @@ import { FaSearch, FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import {
   AllCategoriesIcon,
   QuranIcon,
-  HadithIcon,
   DuasIcon,
   SeerahIcon,
   NamesOfAllahIcon,

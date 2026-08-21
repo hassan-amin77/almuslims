@@ -1,11 +1,11 @@
 # AlMuslims — Authentic Islamic Knowledge Portal
 
-> AlMuslims is a premier, verified Islamic knowledge hub offering authentic resources on the Holy Quran, Hadith collections, Duas & Azkar, Seerah of the Prophet Muhammad ﷺ, Asma-ul-Husna (99 Names of Allah), Islamic Jurisprudence (Fiqh), and Creed (Aqeedah).
+> AlMuslims is a premier, verified Islamic knowledge hub offering authentic resources on the Holy Quran, Duas & Azkar, Seerah of the Prophet Muhammad ﷺ, Asma-ul-Husna (99 Names of Allah), Islamic Jurisprudence (Fiqh), and Creed (Aqeedah).
 
 ## Core Portals & Disciplines
 
 - [Holy Quran (القرآن الكريم)](https://almuslims.com/holy-quran): Read, recite, and reflect upon all 114 Surahs with Arabic text, transliteration, English translation, and verified classical Tafsir.
-- [Explore Categories](https://almuslims.com/categories): Comprehensive directory of Islamic subjects categorized by Quran, Hadith, Seerah, Duas, Fiqh, Aqeedah, Lifestyle, and 99 Names of Allah.
+- [Explore Categories](https://almuslims.com/categories): Comprehensive directory of Islamic subjects categorized by Quran, Seerah, Duas, Fiqh, Aqeedah, Lifestyle, and 99 Names of Allah.
 - [Duas & Azkar (الأدعية والأذكار)](https://almuslims.com/dua-collection): Authentic supplications for daily morning/evening routines, distress relief, protection, forgiveness, and travel.
 - [Seerah of Prophet Muhammad ﷺ (السيرة النبوية)](https://almuslims.com/seerah): Chronological study of the life of the final Messenger ﷺ from the Meccan period to the establishment of the Madinah state.
 - [99 Names of Allah (أسماء الله الحسنى)](https://almuslims.com/names-of-allah): Detailed exploration of Asma-ul-Husna, their spiritual meanings, Quranic references, and devotional benefits.

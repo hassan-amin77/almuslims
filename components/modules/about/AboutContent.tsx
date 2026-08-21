@@ -26,8 +26,8 @@ const features = [
   },
   {
     icon: <HiOutlineHeart className="w-8 h-8" />,
-    title: "Verified Hadith",
-    description: "Authentic collections from Kutub al-Sittah, ensuring you connect with the genuine teachings of Prophet Muhammad (PBUH)."
+    title: "Duas & Azkar",
+    description: "Authentic supplications and daily Adhkar to bring tranquility and divine remembrance into your life."
   },
   {
     icon: <HiOutlineSun className="w-8 h-8" />,
@@ -91,7 +91,7 @@ export default function AboutContent() {
               </div>
               <h2 className="font-heading text-2xl font-bold text-primary mb-4">Our Mission</h2>
               <p className="text-gray-600 leading-relaxed">
-                To provide a clean, ad-free, and authentic digital ecosystem where Muslims can access the Quran, Hadith, 
+                To provide a clean, ad-free, and authentic digital ecosystem where Muslims can access the Quran, Duas, 
                 and essential Islamic resources with ease and confidence. We strive for excellence in every pixel and every verse.
               </p>
             </motion.div>
@@ -160,7 +160,7 @@ export default function AboutContent() {
             <div className="relative z-10">
               <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-6">Start Your Spiritual Journey</h2>
               <p className="text-white/80 mb-10 text-lg">
-                Explore the Quran, learn authentic Hadiths, and connect with your faith today.
+                Explore the Quran, learn authentic Duas, and connect with your faith today.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link 

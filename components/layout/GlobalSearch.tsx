@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { fiqhCategories } from "@/data/hadith-collections";
 import { articles, getArticleUrl } from "@/data/articles";
 import { FaSearch, FaTimes, FaBook, FaParagraph, FaHistory, FaStar } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,12 +9,11 @@ import { getSurahSlug } from "@/lib/quran";
 
 interface SearchResultItem {
   title: string;
-  category: "Quran" | "Hadith" | "Articles" | "Seerah" | "Duas";
+  category: "Quran" | "Articles" | "Seerah" | "Duas";
   link: string;
   description: string;
 }
 
-// Popular Quran Surahs Database for search matching
 const popularSurahs = [
   { name: "Al-Fatihah", no: 1, desc: "The Opening Chapter of the Quran" },
   { name: "Al-Baqarah", no: 2, desc: "The Cow - Largest Quranic Chapter" },
@@ -25,15 +23,13 @@ const popularSurahs = [
   { name: "Al-Mulk", no: 67, desc: "The Sovereignty - Protection from grave trial" }
 ];
 
-// Popular Duas Database for search matching
 const popularDuas = [
   { name: "Rabbana Duas", desc: "40 Quranic prayers beginning with Rabbana", link: "/dua-collection" },
   { name: "Dua after Salat", desc: "Daily morning and evening remembrance prayers", link: "/dua-collection" },
   { name: "Istikhara Dua", desc: "Prayer for seeking guidance in decisions", link: "/dua-collection" },
-  { name: "Dua Kumayl", desc: "Supplication of Kumayl ibn Ziyad (highly regarded Shia prayer)", link: "/dua-collection" }
+  { name: "Dua Kumayl", desc: "Supplication of Kumayl ibn Ziyad (highly regarded prayer)", link: "/dua-collection" }
 ];
 
-// Seerah Milestones Database
 const seerahMilestones = [
   { name: "Birth of Prophet ﷺ", desc: "Born in Mecca during Year of Elephant (570 CE)", link: "/seerah" },
   { name: "First Revelation", desc: "Ghar-i-Hira on Mount Noor (610 CE)", link: "/seerah" },
@@ -95,25 +91,6 @@ export default function GlobalSearch() {
       }
     });
 
-    // 2. Search Hadith Books
-    fiqhCategories.forEach((fiqh) => {
-      fiqh.books.forEach((book) => {
-        if (
-          book.name.toLowerCase().includes(term) ||
-          book.description.toLowerCase().includes(term) ||
-          book.author.toLowerCase().includes(term)
-        ) {
-          matches.push({
-            title: book.name,
-            category: "Hadith",
-            link: `/hadith/${book.apiSlug}`,
-            description: `${book.author} — ${book.totalHadiths.toLocaleString()} Hadiths`,
-          });
-        }
-      });
-    });
-
-    // 3. Search Articles
     articles.forEach((art) => {
       if (
         art.title.toLowerCase().includes(term) ||
@@ -165,8 +142,6 @@ export default function GlobalSearch() {
     switch (category) {
       case "Quran":
         return <FaBook className="text-secondary" />;
-      case "Hadith":
-        return <FaBook className="text-primary dark:text-zinc-300" />;
       case "Articles":
         return <FaParagraph className="text-green-500" />;
       case "Seerah":
@@ -207,7 +182,7 @@ export default function GlobalSearch() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search Surahs, Hadith books, articles, duas, or seerah..."
+                placeholder="Search Surahs, articles, duas, or seerah..."
                 className="flex-1 text-sm sm:text-base focus:outline-none text-zinc-800 dark:text-zinc-100 bg-transparent"
               />
               <button 
@@ -253,7 +228,7 @@ export default function GlobalSearch() {
                 ))
               ) : (
                 <div className="text-center py-10 text-zinc-400 text-xs sm:text-sm">
-                  No matching results found. Try search terms like <span className="italic font-medium text-zinc-500">'Bukhari'</span>, <span className="italic font-medium text-zinc-500">'kafi'</span>, or <span className="italic font-medium text-zinc-500">'Tazkiyah'</span>.
+                  No matching results found. Try search terms like <span className="italic font-medium text-zinc-500">'Fatihah'</span>, <span className="italic font-medium text-zinc-500">'Ayatul Kursi'</span>, or <span className="italic font-medium text-zinc-500">'Istikhara'</span>.
                 </div>
               )}
             </div>

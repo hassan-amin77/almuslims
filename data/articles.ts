@@ -68,15 +68,6 @@ export const categoriesMeta: CategoryInfo[] = [
     iconType: "quran"
   },
   {
-    id: "hadith",
-    name: "Hadith",
-    slug: "hadith",
-    count: 0,
-    description: "Prophetic traditions, authentic narrations & explanations",
-    href: "/categories?category=hadith",
-    iconType: "hadith"
-  },
-  {
     id: "seerah",
     name: "Seerah",
     slug: "seerah",
@@ -147,7 +138,6 @@ export const popularTopics = [
   { name: "Tawheed", count: 0, categoryId: "aqeedah" },
   { name: "Prayer", count: 0, categoryId: "fiqh" },
   { name: "Tafsir", count: 0, categoryId: "quran" },
-  { name: "Sunnah", count: 0, categoryId: "hadith" },
   { name: "Adhkar", count: 0, categoryId: "duas" },
   { name: "Madinah", count: 0, categoryId: "seerah" },
   { name: "Asma-ul-Husna", count: 0, categoryId: "names-of-allah" },

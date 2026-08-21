@@ -8,7 +8,7 @@ export function OrganizationAndWebsiteJsonLd() {
     "name": "AlMuslims",
     "alternateName": "AlMuslims Authentic Islamic Knowledge",
     "url": "https://almuslims.com",
-    "description": "Your trusted portal for authentic Islamic knowledge, Holy Quran, Hadith, Duas, Seerah, and 99 Names of Allah.",
+    "description": "Your trusted portal for authentic Islamic knowledge, Holy Quran, Duas, Seerah, and 99 Names of Allah.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {

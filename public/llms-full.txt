@@ -7,7 +7,7 @@ This document contains detailed structured summaries of the AlMuslims knowledge 
 ## 1. About AlMuslims
 - Portal Name: AlMuslims
 - Motto: Authentic Islamic Knowledge
-- Mission: Providing verified Islamic scholarship, primary source texts (Quran and Hadith), Duas, Seerah, Asma-ul-Husna, and Fiqh guidance for Muslims and seekers worldwide.
+- Mission: Providing verified Islamic scholarship, primary source texts (Quran), Duas, Seerah, Asma-ul-Husna, and Fiqh guidance for Muslims and seekers worldwide.
 - URL: https://almuslims.com
 - About Page: https://almuslims.com/about-us
 - Contact Page: https://almuslims.com/contact
@@ -26,7 +26,7 @@ This document contains detailed structured summaries of the AlMuslims knowledge 
 
 ### Categories Hub
 - URL: https://almuslims.com/categories
-- Description: Categorized exploration of Islamic resources across all key topics (Quran, Hadith, Seerah, Duas, Fiqh, Aqeedah, Lifestyle, and 99 Names).
+- Description: Categorized exploration of Islamic resources across all key topics (Quran, Seerah, Duas, Fiqh, Aqeedah, Lifestyle, and 99 Names).
 
 ### Duas & Adhkar (الأدعية والأذكار اليومية)
 - URL: https://almuslims.com/dua-collection

@@ -66,7 +66,7 @@ export default function TermsPage() {
           <section>
             <h2 className="font-heading text-xl font-bold text-primary mb-3">3. Content Disclaimer</h2>
             <p className="text-gray-600 leading-relaxed">
-              The content provided on AlMuslims.com — including Quranic translations, Hadith,
+              The content provided on AlMuslims.com — including Quranic translations,
               articles, and scholarly opinions — is for general informational and educational
               purposes only. While we strive to ensure accuracy, we do not guarantee that all
               information is complete, reliable, or up to date. Always consult qualified scholars
@@ -80,7 +80,7 @@ export default function TermsPage() {
               All content on this website — including articles, text, graphics, logos, UI designs,
               and images — is the property of AlMuslims.com unless stated otherwise. You may not
               copy, reproduce, republish, or distribute any content without our prior written
-              permission. Quranic texts and Hadiths are from public Islamic sources and attributed
+              permission. Quranic texts are from public Islamic sources and attributed
               accordingly.
             </p>
           </section>
